@@ -365,10 +365,10 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 4: TEAM (Dark) ——— */}
-        <section id="o-nas" className="relative min-h-[780px] overflow-hidden border-b border-white/10">
+        <section id="o-nas" className="relative overflow-hidden border-b border-white/10">
           <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
-          <div className="relative mx-auto min-h-[780px] max-w-[1280px] px-5 py-24 lg:px-8">
+          <div className="relative mx-auto flex max-w-[1280px] flex-col px-5 py-24 lg:px-8">
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
               <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
@@ -378,13 +378,13 @@ export default function App() {
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.teamBtn} <ArrowRight size={15} /></a>
             </div>
-            <div className="absolute inset-x-5 bottom-8 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4 lg:inset-x-8">
+            <div className="mt-16 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
               {tr.stats.map(([value, label, Icon]) => (
-                <div key={label}>
+                <div key={label} className="flex flex-col">
                   <Icon className="mb-3 text-white" size={24} strokeWidth={1.4} />
                   <strong className="block font-display text-2xl font-bold sm:text-3xl">{value}</strong>
-                  <span className="mt-1 block max-w-[140px] text-[10px] font-bold uppercase leading-5 tracking-[0.14em] text-zinc-400">{label}</span>
-                  <span className="mt-3 block h-px w-8 bg-red-600" />
+                  <span className="mt-1 block h-10 max-w-[140px] text-[10px] font-bold uppercase leading-5 tracking-[0.14em] text-zinc-400">{label}</span>
+                  <span className="mt-auto block h-px w-8 bg-red-600" />
                 </div>
               ))}
             </div>
