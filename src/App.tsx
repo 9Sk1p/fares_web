@@ -279,8 +279,8 @@ export default function App() {
           <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-5 pb-0 pt-12 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-20">
             <div className="py-10 lg:py-20">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
-              <p className="mt-7 max-w-md text-base text-zinc-400">{tr.heroSub}</p>
+              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
+              <p className="mt-7 text-base text-zinc-400">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
                 <a href="#sluzby" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.heroBtn2} <ArrowRight size={15} /></a>
@@ -310,7 +310,7 @@ export default function App() {
         <section id="sluzby" className="bg-zinc-50 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
               {tr.svcTitle}<Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -321,7 +321,7 @@ export default function App() {
                     <c.icon className="text-red-600" size={26} strokeWidth={1.6} />
                   </div>
                   <span className="my-5 block h-px w-10 bg-red-600" />
-                  <h3 className="font-display text-xl font-bold uppercase">{c.title}</h3>
+                  <h3 className="font-display text-xl font-bold uppercase leading-[1.25]">{c.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600">{c.text}</p>
                   <a href="#kontakt" className="mt-6 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-900 transition hover:text-red-600">
                     {tr.svcMore} <ArrowRight size={13} />
@@ -340,12 +340,12 @@ export default function App() {
           <img src={img.usa} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
           <div className="relative mx-auto flex min-h-[680px] max-w-[1280px] items-center px-5 py-24 lg:px-8">
-            <div className="max-w-2xl">
+            <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
-              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
                 {tr.usaTitle}<br /><span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
               </h2>
-              <p className="mt-7 max-w-lg text-lg leading-7 text-zinc-300">{tr.usaText}</p>
+              <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
               <p className="mt-20 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">AMERICAN CARS<br />EUROPEAN ROADS</p>
             </div>
@@ -368,7 +368,7 @@ export default function App() {
           </div>
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
-            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
               {tr.whyH1}<br /><span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
             </h2>
             <div className="mt-12 grid gap-10 sm:grid-cols-2">
@@ -376,7 +376,7 @@ export default function App() {
                 <div key={title} className="relative pl-14">
                   <span className="absolute left-0 top-0 font-display text-5xl font-bold text-zinc-200">0{i + 1}</span>
                   <Icon className="mb-3 text-red-600" size={24} strokeWidth={1.6} />
-                  <h3 className="font-display text-base font-bold uppercase">{title}</h3>
+                  <h3 className="font-display text-base font-bold uppercase leading-[1.25]">{title}</h3>
                   <span className="my-3 block h-px w-8 bg-red-600" />
                   <p className="text-sm leading-6 text-zinc-600">{text}</p>
                 </div>
@@ -394,9 +394,9 @@ export default function App() {
           <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
           <div className="relative mx-auto min-h-[780px] max-w-[1280px] px-5 py-24 lg:px-8">
-            <div className="max-w-lg">
+            <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
-              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
                 {tr.teamH1}<br /><span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
               </h2>
               <p className="mt-8 text-xl leading-snug text-zinc-200">{tr.teamSub}</p>
@@ -426,7 +426,7 @@ export default function App() {
             <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
                   {tr.workH1}<br /><span className="text-red-600">{tr.workH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-xl text-zinc-300">{tr.workSub}</p>
@@ -458,7 +458,7 @@ export default function App() {
         <section id="reference" className="bg-zinc-100 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
               {tr.refH1}<br /><span className="text-red-600">{tr.refH2}</span><Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 md:grid-cols-3">
@@ -506,7 +506,7 @@ export default function App() {
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
                   {tr.ctaH1}<br /><span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
