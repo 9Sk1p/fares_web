@@ -209,10 +209,6 @@ const translations = {
   },
 };
 
-const Accent = ({ color = 'red' }: { color?: 'red' | 'white' }) => (
-  <span className={`ml-2 inline-block h-3 w-3 ${color === 'red' ? 'bg-red-600' : 'bg-white'}`} />
-);
-
 function RuleLabel({ children }: { children: string }) {
   return (
     <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">
@@ -318,9 +314,9 @@ export default function App() {
           <div className="relative border-t border-white/10 bg-[#0d0f12]/90 backdrop-blur-sm">
             <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-0 sm:grid-cols-3">
               {([Settings, ShieldCheck, CircleUserRound] as IconType[]).map((Icon, i) => (
-                <div key={tr.benefits[i]} className={`flex items-center gap-6 px-6 py-8 lg:px-10 lg:py-10 ${i > 0 ? 'border-t border-white/10 sm:border-l sm:border-t-0' : ''}`}>
-                  <Icon size={36} className="shrink-0 text-red-600" strokeWidth={1.3} />
-                  <span className="text-sm font-bold uppercase tracking-[0.22em] text-zinc-300">{tr.benefits[i]}</span>
+                <div key={tr.benefits[i]} className={`flex min-w-0 items-center gap-3 px-4 py-6 lg:gap-6 lg:px-10 lg:py-10 ${i > 0 ? 'border-t border-white/10 sm:border-l sm:border-t-0' : ''}`}>
+                  <Icon size={32} className="h-8 w-8 shrink-0 text-red-600 lg:h-9 lg:w-9" strokeWidth={1.3} />
+                  <span className="min-w-0 flex-1 text-[11px] font-bold uppercase leading-4 tracking-[0.1em] text-zinc-300 sm:text-[10px] sm:tracking-[0.08em] lg:text-sm lg:leading-5 lg:tracking-[0.16em]">{tr.benefits[i]}</span>
                 </div>
               ))}
             </div>
@@ -332,7 +328,7 @@ export default function App() {
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
             <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.svcTitle}<Accent color="red" />
+              {tr.svcTitle}
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {tr.svcCards.map((c) => (
@@ -364,7 +360,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
               <h2 className="mt-8 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
+                {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span>
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
@@ -381,7 +377,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
               <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
+                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span>
               </h2>
               <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
@@ -413,7 +409,7 @@ export default function App() {
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-16 text-zinc-900 lg:px-16 lg:py-20">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
             <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
+              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span>
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
@@ -440,7 +436,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                  {tr.workH1} <span className="text-red-600">{tr.workH2}</span><Accent color="white" />
+                  {tr.workH1} <span className="text-red-600">{tr.workH2}</span>
                 </h2>
                 <p className="mt-4 text-base text-zinc-300 sm:text-lg lg:text-xl">{tr.workSub}</p>
               </div>
@@ -514,7 +510,7 @@ export default function App() {
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
             <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.refH1} <span className="text-red-600">{tr.refH2}</span><Accent color="red" />
+              {tr.refH1} <span className="text-red-600">{tr.refH2}</span>
             </h2>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
@@ -562,7 +558,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                  {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
+                  {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}</span>
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
