@@ -196,7 +196,7 @@ const translations = {
 };
 
 const Accent = ({ color = 'red' }: { color?: 'red' | 'white' }) => (
-  <span className={`ml-1 inline-block h-2 w-2 ${color === 'red' ? 'bg-red-600' : 'bg-white'}`} />
+  <span className={`ml-2 inline-block h-3 w-3 ${color === 'red' ? 'bg-red-600' : 'bg-white'}`} />
 );
 
 function RuleLabel({ children }: { children: string }) {
@@ -279,7 +279,7 @@ export default function App() {
           <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-5 pb-0 pt-12 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-20">
             <div className="py-10 lg:py-20">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-6 font-display text-5xl font-bold uppercase leading-[1.15] sm:text-7xl lg:text-8xl">{tr.heroH1}</h1>
+              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
               <p className="mt-7 max-w-md text-base text-zinc-400">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
@@ -310,8 +310,8 @@ export default function App() {
         <section id="sluzby" className="bg-zinc-50 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
-              {tr.svcTitle}<Accent />
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.svcTitle}<Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {tr.svcCards.map((c) => (
@@ -342,7 +342,7 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[680px] max-w-[1280px] items-center px-5 py-24 lg:px-8">
             <div className="max-w-2xl">
               <RuleLabel>{tr.usaLabel}</RuleLabel>
-              <h2 className="mt-8 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
+              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
                 {tr.usaTitle}<br /><span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
               </h2>
               <p className="mt-7 max-w-lg text-lg leading-7 text-zinc-300">{tr.usaText}</p>
@@ -368,8 +368,8 @@ export default function App() {
           </div>
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
-            <h2 className="mt-7 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
-              {tr.whyH1}<br /><span className="text-red-600">{tr.whyH2}</span><Accent />
+            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.whyH1}<br /><span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
             </h2>
             <div className="mt-12 grid gap-10 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
@@ -396,7 +396,7 @@ export default function App() {
           <div className="relative mx-auto min-h-[780px] max-w-[1280px] px-5 py-24 lg:px-8">
             <div className="max-w-lg">
               <RuleLabel>{tr.teamLabel}</RuleLabel>
-              <h2 className="mt-7 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
+              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
                 {tr.teamH1}<br /><span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
               </h2>
               <p className="mt-8 text-xl leading-snug text-zinc-200">{tr.teamSub}</p>
@@ -426,7 +426,7 @@ export default function App() {
             <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
                   {tr.workH1}<br /><span className="text-red-600">{tr.workH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-xl text-zinc-300">{tr.workSub}</p>
@@ -458,8 +458,8 @@ export default function App() {
         <section id="reference" className="bg-zinc-100 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
-              {tr.refH1}<br /><span className="text-red-600">{tr.refH2}</span><Accent />
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.refH1}<br /><span className="text-red-600">{tr.refH2}</span><Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
@@ -506,7 +506,7 @@ export default function App() {
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-5xl font-bold uppercase leading-[1.05] sm:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.2] tracking-normal md:text-7xl lg:text-8xl">
                   {tr.ctaH1}<br /><span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
