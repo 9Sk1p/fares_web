@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Oswald', 'sans-serif'],
+        display: ['Barlow Condensed', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {

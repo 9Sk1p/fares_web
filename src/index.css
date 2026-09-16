@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,3 +20,11 @@ html { scroll-behavior: smooth; }
 }
 
 body { font-family: 'Inter', sans-serif; }
+
+h1.font-display,
+h2.font-display,
+h3.font-display {
+  line-height: 1.16;
+  padding-top: 0.08em;
+  text-rendering: geometricPrecision;
+}
