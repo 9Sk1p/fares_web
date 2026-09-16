@@ -276,8 +276,8 @@ export default function App() {
       <main>
         {/* ——— BLOCK 1: HERO (Dark) ——— */}
         <section id="domu" className="relative border-b border-white/10 bg-[#0a0c0e] pt-20">
-          <div className="mx-auto grid max-w-[1280px] items-start gap-8 px-5 pb-0 pt-6 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-0">
-            <div className="py-6 lg:py-10">
+          <div className="mx-auto grid max-w-[1280px] items-start gap-8 px-5 pb-0 pt-6 sm:pt-8 lg:min-h-[628px] lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-0">
+            <div className="flex self-stretch flex-col justify-center py-6 lg:h-[628px] lg:translate-y-24 lg:py-10">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
               <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
               <p className="mt-7 text-base text-zinc-400">{tr.heroSub}</p>
