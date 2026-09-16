@@ -10,6 +10,7 @@ import {
   Gauge,
   Handshake,
   Instagram,
+  Mail,
   MapPin,
   Menu,
   MessageCircle,
@@ -117,6 +118,9 @@ const translations = {
     ctaHoursVal: 'Po–Pá 9:00–18:00',
     ctaVisit: 'TĚŠÍME SE NA VAŠI NÁVŠTĚVU.',
     footer: '© 2026 FARES s.r.o.',
+    footerAddr: 'Praha, Česká republika',
+    footerPhone: '+420 777 905 432',
+    footerEmail: 'info@autoservisfares.cz',
     langAria: 'Přepnout jazyk',
     menuAria: 'Otevřít menu',
   },
@@ -190,6 +194,9 @@ const translations = {
     ctaHoursVal: 'Пн–Пт 9:00–18:00',
     ctaVisit: 'ЖДЁМ ВАШЕГО ВИЗИТА.',
     footer: '© 2026 FARES s.r.o.',
+    footerAddr: 'Прага, Чешская Республика',
+    footerPhone: '+420 777 905 432',
+    footerEmail: 'info@autoservisfares.cz',
     langAria: 'Переключить язык',
     menuAria: 'Открыть меню',
   },
@@ -571,21 +578,55 @@ export default function App() {
 
       {/* ——— FOOTER ——— */}
       <footer className="border-t border-white/10 bg-[#080a0c]">
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-5 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        {/* Top row: logo left, nav center, socials right */}
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-8 px-5 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <Logo />
-          <nav className="hidden flex-wrap gap-6 lg:flex">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3">
             {tr.nav.map(([label, href]) => (
-              <a key={href} href={href} className="text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-500 transition hover:text-white">{label}</a>
+              <a key={href} href={href} className="group relative text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-500 transition hover:text-white">
+                {label}
+                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-red-600 transition-all duration-300 group-hover:w-full" />
+              </a>
             ))}
           </nav>
           <div className="flex items-center gap-4">
-            <a href="https://www.instagram.com/autoservisfares" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-zinc-400 transition hover:text-red-600"><Instagram size={18} /></a>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="text-zinc-400 transition hover:text-red-600"><MessageCircle size={18} /></a>
+            <a href="https://www.instagram.com/autoservisfares" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-zinc-400 transition hover:border-red-600 hover:text-red-600"><Instagram size={18} /></a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-zinc-400 transition hover:border-red-600 hover:text-red-600"><MessageCircle size={18} /></a>
           </div>
         </div>
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-3 border-t border-white/10 px-5 py-6 text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-600 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <span>{tr.footer}</span>
-          <span className="text-zinc-500">Servis <i className="mx-1 text-red-600">•</i> Opravy <i className="mx-1 text-red-600">•</i> Vozy z USA</span>
+
+        {/* Middle row: address, phone, email centered */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-center gap-6 px-5 py-8 sm:flex-row sm:gap-12 lg:px-8">
+            <div className="flex items-center gap-3 text-zinc-400">
+              <MapPin size={16} className="text-red-600" />
+              <span className="text-xs font-bold uppercase tracking-[0.12em]">{tr.footerAddr}</span>
+            </div>
+            <div className="flex items-center gap-3 text-zinc-400">
+              <Phone size={16} className="text-red-600" />
+              <a href="tel:+420777905432" className="text-xs font-bold uppercase tracking-[0.12em] transition hover:text-white">{tr.footerPhone}</a>
+            </div>
+            <div className="flex items-center gap-3 text-zinc-400">
+              <Mail size={16} className="text-red-600" />
+              <a href="mailto:info@autoservisfares.cz" className="text-xs font-bold uppercase tracking-[0.12em] transition hover:text-white">{tr.footerEmail}</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom row: copyright left, service + languages right */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-4 px-5 py-6 text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-600 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+            <span>{tr.footer}</span>
+            <div className="flex items-center gap-5">
+              <span className="text-zinc-500">Servis <i className="mx-1 text-red-600">•</i> Opravy <i className="mx-1 text-red-600">•</i> Vozy z USA</span>
+              <span className="hidden text-zinc-700 sm:inline">|</span>
+              <div className="flex items-center gap-2">
+                <button type="button" onClick={() => setLang('cz')} className={lang === 'cz' ? 'text-white' : 'text-zinc-500 hover:text-white'}>CZ</button>
+                <span className="text-zinc-700">|</span>
+                <button type="button" onClick={() => setLang('ru')} className={lang === 'ru' ? 'text-white' : 'text-zinc-500 hover:text-white'}>RU</button>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
