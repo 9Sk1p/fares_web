@@ -68,13 +68,11 @@ const translations = {
     svcMore: 'VÍCE INFORMACÍ',
     svcAll: 'VŠECHNY SLUŽBY',
     usaLabel: 'AUTA Z USA',
-    usaTitle: 'OD AMERIKY AŽ NA',
-    usaTitle2: 'EVROPSKÉ SILNICE',
+    usaTitle: 'OD AMERIKY AŽ NA EVROPSKÉ SILNICE',
     usaText: 'Pomáháme s výběrem, dovozem, opravami a úpravami vozů z USA. Zajistíme kompletní proces — od nákupu přes dopravu, přestavbu na evropské standardy až po registraci v ČR.',
     usaBtn: 'VÍCE O AUTECH Z USA',
     whyLabel: 'PROČ FARES',
-    whyH1: 'VÍME, CO DĚLÁME.',
-    whyH2: 'A DĚLÁME TO POŘÁDNĚ',
+    whyH1: 'VÍME, CO DĚLÁME. A DĚLÁME TO POŘÁDNĚ',
     whyFeats: [
       ['ZKUŠENOSTI', 'Zkušený tým a individuální přístup ke každému vozu.', Award],
       ['MODERNÍ VYBAVENÍ', 'Diagnostika a technologie pro moderní automobily.', Cog],
@@ -83,22 +81,19 @@ const translations = {
     ] as [string, string, IconType][],
     whyBtn: 'POZNAT NÁŠ TÝM',
     teamLabel: 'O NÁS',
-    teamH1: 'ZA FARES',
-    teamH2: 'STOJÍ LIDÉ',
+    teamH1: 'ZA FARES STOJÍ LIDÉ',
     teamSub: 'Zkušenosti, poctivá práce a vztah k tomu, co děláme.',
     teamText: 'Autoservis FARES vznikl z vášně pro auta a touhy dělat věci poctivě. Každému vozu věnujeme pozornost a každému zákazníkovi chceme nabídnout férový přístup a řešení, na které se může spolehnout.',
     teamBtn: 'POZNAT NÁŠ TÝM',
     stats: [['5+', 'ČLENŮ TÝMU', CircleUserRound], ['1000+', 'SPOKOJENÝCH ZÁKAZNÍKŮ', Star], ['10 LET', 'ZKUŠENOSTÍ', Settings], ['PRAHA', 'A OKOLÍ', MapPin]] as [string, string, IconType][],
     workLabel: 'NAŠE PRÁCE',
-    workH1: 'PRÁCE, KTERÁ',
-    workH2: 'MLUVÍ SAMA ZA SEBE',
+    workH1: 'PRÁCE, KTERÁ MLUVÍ SAMA ZA SEBE',
     workSub: 'Každý vůz má svůj příběh. My se postaráme o jeho další cestu.',
     workText: 'Od běžného servisu až po náročné opravy a vozy z USA. Děláme práci, na kterou se můžete spolehnout — a výsledky jsou vidět.',
     workBtn: 'ZOBRAZIT VÍCE FOTOGRAFIÍ',
     workItems: ['SERVIS A OPRAVY', 'BRZDY A PODVOZEK', 'DIAGNOSTIKA', 'KAROSERIE'],
     refLabel: 'REFERENCE',
-    refH1: 'CO ŘÍKAJÍ',
-    refH2: 'NAŠI ZÁKAZNÍCI',
+    refH1: 'CO ŘÍKAJÍ NAŠI ZÁKAZNÍCI',
     refBottom: 'PŘES 1000+ SPOKOJENÝCH ZÁKAZNÍKŮ',
     refAllBtn: 'VŠECHNY RECENZE',
     reviews: [
@@ -107,8 +102,7 @@ const translations = {
       ['Petr S.', 'Audi Q7', 'Velmi profesionální přístup a ochota vše vysvětlit. Určitě se vrátím.'],
     ],
     ctaLabel: 'KONTAKT',
-    ctaH1: 'POTŘEBUJETE SERVIS?',
-    ctaH2: 'NAPIŠTE NÁM',
+    ctaH1: 'POTŘEBUJETE SERVIS? NAPIŠTE NÁM',
     ctaSub: 'Domluvíme termín a postaráme se o vaše auto.',
     ctaPhone: 'TELEFON',
     ctaAddr: 'ADRESA',
@@ -141,13 +135,11 @@ const translations = {
     svcMore: 'ПОДРОБНЕЕ',
     svcAll: 'ВСЕ УСЛУГИ',
     usaLabel: 'АВТО ИЗ США',
-    usaTitle: 'ОТ АМЕРИКИ ДО',
-    usaTitle2: 'ЕВРОПЕЙСКИХ ДОРОГ',
+    usaTitle: 'ОТ АМЕРИКИ ДО ЕВРОПЕЙСКИХ ДОРОГ',
     usaText: 'Помогаем с подбором, доставкой, ремонтом и доработкой авто из США. Обеспечиваем полный процесс — от покупки через доставку, адаптацию под стандарты ЕС до регистрации в ЧР.',
     usaBtn: 'ПОДРОБНЕЕ ОБ АВТО ИЗ США',
     whyLabel: 'ПОЧЕМУ FARES',
-    whyH1: 'МЫ ЗНАЕМ, ЧТО ДЕЛАЕМ.',
-    whyH2: 'И ДЕЛАЕМ ЭТО КАЧЕСТВЕННО',
+    whyH1: 'МЫ ЗНАЕМ, ЧТО ДЕЛАЕМ. И ДЕЛАЕМ ЭТО КАЧЕСТВЕННО',
     whyFeats: [
       ['ОПЫТ', 'Опытная команда и индивидуальный подход к каждому авто.', Award],
       ['СОВРЕМЕННОЕ ОБОРУДОВАНИЕ', 'Диагностика и технологии для современных автомобилей.', Cog],
@@ -156,22 +148,19 @@ const translations = {
     ] as [string, string, IconType][],
     whyBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
     teamLabel: 'О НАС',
-    teamH1: 'ЗА FARES',
-    teamH2: 'СТОЯТ ЛЮДИ',
+    teamH1: 'ЗА FARES СТОЯТ ЛЮДИ',
     teamSub: 'Опыт, честная работа и любовь к своему делу.',
     teamText: 'Автосервис FARES создан из любви к автомобилям и желания делать всё качественно. Мы уделяем внимание каждому автомобилю и предлагаем каждому клиенту честный подход и решение, на которое можно положиться.',
     teamBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
     stats: [['5+', 'ЧЛЕНОВ КОМАНДЫ', CircleUserRound], ['1000+', 'ДОВОЛЬНЫХ КЛИЕНТОВ', Star], ['10 ЛЕТ', 'ОПЫТА', Settings], ['ПРАГА', 'И ОКРЕСТНОСТИ', MapPin]] as [string, string, IconType][],
     workLabel: 'НАШИ РАБОТЫ',
-    workH1: 'РАБОТА, КОТОРАЯ',
-    workH2: 'ГОВОРИТ САМА ЗА СЕБЯ',
+    workH1: 'РАБОТА, КОТОРАЯ ГОВОРИТ САМА ЗА СЕБЯ',
     workSub: 'У каждого автомобиля своя история. Мы позаботимся о его дальнейшем пути.',
     workText: 'От обычного сервиса до сложного ремонта и авто из США. Мы делаем работу, которой можно доверять — результат виден.',
     workBtn: 'ПОКАЗАТЬ БОЛЬШЕ ФОТО',
     workItems: ['СЕРВИС И РЕМОНТ', 'ТОРМОЗА И ХОДОВАЯ', 'ДИАГНОСТИКА', 'КУЗОВ'],
     refLabel: 'ОТЗЫВЫ',
-    refH1: 'ЧТО ГОВОРЯТ',
-    refH2: 'НАШИ КЛИЕНТЫ',
+    refH1: 'ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ',
     refBottom: 'БОЛЕЕ 1000+ ДОВОЛЬНЫХ КЛИЕНТОВ',
     refAllBtn: 'ВСЕ ОТЗЫВЫ',
     reviews: [
@@ -180,8 +169,7 @@ const translations = {
       ['Петр С.', 'Audi Q7', 'Очень профессиональный подход и готовность всё объяснить. Обязательно вернусь.'],
     ],
     ctaLabel: 'КОНТАКТЫ',
-    ctaH1: 'НУЖЕН СЕРВИС?',
-    ctaH2: 'НАПИШИТЕ НАМ',
+    ctaH1: 'НУЖЕН СЕРВИС? НАПИШИТЕ НАМ',
     ctaSub: 'Договоримся о времени и позаботимся о вашем авто.',
     ctaPhone: 'ТЕЛЕФОН',
     ctaAddr: 'АДРЕС',
@@ -219,7 +207,7 @@ function Logo() {
           <circle cx="71" cy="35" r="5" fill="#0a0a0a" stroke="#f4f4f5" strokeWidth="1.5" />
         </svg>
       </div>
-      <span className="hidden leading-none sm:block">
+      <span className="hidden leading-[1.3] sm:block">
         <strong className="block font-display text-sm tracking-[0.08em]">
           AUTOSERVIS <em className="not-italic text-red-600">FARES</em>
         </strong>
@@ -279,7 +267,7 @@ export default function App() {
           <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-5 pb-0 pt-12 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-20">
             <div className="py-10 lg:py-20">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
+              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
               <p className="mt-7 text-base text-zinc-400">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
@@ -310,7 +298,7 @@ export default function App() {
         <section id="sluzby" className="bg-zinc-50 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
               {tr.svcTitle}<Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -321,7 +309,7 @@ export default function App() {
                     <c.icon className="text-red-600" size={26} strokeWidth={1.6} />
                   </div>
                   <span className="my-5 block h-px w-10 bg-red-600" />
-                  <h3 className="font-display text-xl font-bold uppercase leading-[1.25]">{c.title}</h3>
+                  <h3 className="font-display text-xl font-bold uppercase leading-[1.3]">{c.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600">{c.text}</p>
                   <a href="#kontakt" className="mt-6 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-900 transition hover:text-red-600">
                     {tr.svcMore} <ArrowRight size={13} />
@@ -342,8 +330,8 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[680px] max-w-[1280px] items-center px-5 py-24 lg:px-8">
             <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
-              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-                {tr.usaTitle}<br /><span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
+              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+                {tr.usaTitle}<Accent color="white" />
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
@@ -368,15 +356,15 @@ export default function App() {
           </div>
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
-            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-              {tr.whyH1}<br /><span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
+            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.whyH1}<Accent color="white" />
             </h2>
             <div className="mt-12 grid gap-10 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
                 <div key={title} className="relative pl-14">
                   <span className="absolute left-0 top-0 font-display text-5xl font-bold text-zinc-200">0{i + 1}</span>
                   <Icon className="mb-3 text-red-600" size={24} strokeWidth={1.6} />
-                  <h3 className="font-display text-base font-bold uppercase leading-[1.25]">{title}</h3>
+                  <h3 className="font-display text-base font-bold uppercase leading-[1.3]">{title}</h3>
                   <span className="my-3 block h-px w-8 bg-red-600" />
                   <p className="text-sm leading-6 text-zinc-600">{text}</p>
                 </div>
@@ -396,8 +384,8 @@ export default function App() {
           <div className="relative mx-auto min-h-[780px] max-w-[1280px] px-5 py-24 lg:px-8">
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
-              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-                {tr.teamH1}<br /><span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
+              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+                {tr.teamH1}<Accent color="white" />
               </h2>
               <p className="mt-8 text-xl leading-snug text-zinc-200">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
@@ -426,8 +414,8 @@ export default function App() {
             <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-                  {tr.workH1}<br /><span className="text-red-600">{tr.workH2}</span><Accent color="white" />
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+                  {tr.workH1}<Accent color="white" />
                 </h2>
                 <p className="mt-6 text-xl text-zinc-300">{tr.workSub}</p>
               </div>
@@ -458,8 +446,8 @@ export default function App() {
         <section id="reference" className="bg-zinc-100 py-24 text-zinc-900 lg:py-32">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-              {tr.refH1}<br /><span className="text-red-600">{tr.refH2}</span><Accent color="red" />
+            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.refH1}<Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
@@ -476,7 +464,7 @@ export default function App() {
                         <Star key={j} size={14} className="fill-red-600 text-red-600" />
                       ))}
                     </div>
-                    <span className="font-display text-4xl leading-none text-red-600">"</span>
+                    <span className="font-display text-4xl leading-[1.3] text-red-600">"</span>
                     <p className="mt-2 flex-1 text-sm leading-6 text-zinc-300">{text}</p>
                     <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
                       <CircleUserRound size={24} className="text-zinc-500" />
@@ -506,8 +494,8 @@ export default function App() {
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.25] tracking-normal md:text-7xl lg:text-8xl">
-                  {tr.ctaH1}<br /><span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
+                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
+                  {tr.ctaH1}<Accent color="white" />
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
