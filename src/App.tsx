@@ -302,10 +302,10 @@ export default function App() {
           <img src={img.hero} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c0e] via-[#0a0c0e]/85 to-[#0a0c0e]/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e] via-transparent to-[#0a0c0e]/40" />
-          <div className="relative mx-auto flex min-h-[620px] max-w-[1280px] items-center px-5 py-16 lg:min-h-[700px] lg:px-8">
+          <div className="relative mx-auto flex min-h-[500px] max-w-[1280px] items-center px-5 py-12 lg:min-h-[560px] lg:px-8">
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
+              <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">{tr.heroH1}</h1>
               <p className="mt-7 text-base text-zinc-300">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
@@ -328,13 +328,13 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 2: SERVICES (Light) ——— */}
-        <section id="sluzby" className="bg-zinc-50 py-24 text-zinc-900 lg:py-32">
+        <section id="sluzby" className="bg-zinc-50 py-16 text-zinc-900 lg:py-24">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
               {tr.svcTitle}<Accent color="red" />
             </h2>
-            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {tr.svcCards.map((c) => (
                 <article key={c.num} className="group flex flex-col border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-red-600 hover:shadow-lg">
                   <div className="flex items-center justify-between">
@@ -357,18 +357,18 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 3: USA CARS (Dark) ——— */}
-        <section id="usa" className="relative min-h-[680px] overflow-hidden border-y border-white/10">
+        <section id="usa" className="relative min-h-[560px] overflow-hidden border-y border-white/10">
           <img src={img.usa} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
-          <div className="relative mx-auto flex min-h-[680px] max-w-[1280px] items-center px-5 py-24 lg:px-8">
+          <div className="relative mx-auto flex min-h-[560px] max-w-[1280px] items-center px-5 py-16 lg:px-8">
             <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
-              <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+              <h2 className="mt-8 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                 {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
-              <p className="mt-20 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">AMERICAN CARS<br />EUROPEAN ROADS</p>
+              <p className="mt-12 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">AMERICAN CARS<br />EUROPEAN ROADS</p>
             </div>
           </div>
         </section>
@@ -377,17 +377,17 @@ export default function App() {
         <section id="o-nas" className="relative overflow-hidden border-b border-white/10">
           <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
-          <div className="relative mx-auto flex max-w-[1280px] flex-col px-5 py-24 lg:px-8">
+          <div className="relative mx-auto flex max-w-[1280px] flex-col px-5 py-16 lg:px-8">
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
-              <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+              <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                 {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
               </h2>
-              <p className="mt-8 text-xl leading-snug text-zinc-200">{tr.teamSub}</p>
+              <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.teamBtn} <ArrowRight size={15} /></a>
             </div>
-            <div className="mt-16 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
               {tr.stats.map(([value, label, Icon]) => (
                 <div key={label} className="flex flex-col">
                   <Icon className="mb-3 text-white" size={24} strokeWidth={1.4} />
@@ -401,7 +401,7 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 5: WHY US (Split 50/50) ——— */}
-        <section id="pro-nas" className="grid min-h-[700px] grid-cols-1 border-b border-white/10 lg:grid-cols-2">
+        <section id="pro-nas" className="grid min-h-[600px] grid-cols-1 border-b border-white/10 lg:grid-cols-2">
           <div className="relative min-h-[400px] overflow-hidden lg:min-h-0">
             <img src={img.why} alt="" className="h-full w-full object-cover grayscale" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -410,12 +410,12 @@ export default function App() {
               <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
             </div>
           </div>
-          <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
+          <div className="flex flex-col justify-center bg-zinc-50 px-6 py-16 text-zinc-900 lg:px-16 lg:py-20">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
-            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
               {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
             </h2>
-            <div className="mt-12 grid gap-10 sm:grid-cols-2">
+            <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
                 <div key={title} className="relative pl-14">
                   <span className="absolute left-0 top-0 font-display text-5xl font-bold text-zinc-200">0{i + 1}</span>
@@ -434,24 +434,24 @@ export default function App() {
 
 
         {/* ——— BLOCK 6: GALLERY (Dark) ——— */}
-        <section id="prace" className="border-b border-white/10 bg-[#0d1013] py-24 lg:py-32">
+        <section id="prace" className="border-b border-white/10 bg-[#0d1013] py-16 lg:py-24">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                   {tr.workH1} <span className="text-red-600">{tr.workH2}</span><Accent color="white" />
                 </h2>
-                <p className="mt-6 text-xl text-zinc-300">{tr.workSub}</p>
+                <p className="mt-4 text-base text-zinc-300 sm:text-lg lg:text-xl">{tr.workSub}</p>
               </div>
               <p className="border-l border-zinc-600 pl-6 text-sm leading-6 text-zinc-400">{tr.workText}</p>
             </div>
-            <div className="mt-12 grid h-[520px] grid-cols-2 gap-2 sm:h-[560px] sm:grid-cols-4 lg:flex lg:h-[560px]">
+            {/* Desktop: expanding panels */}
+            <div className="mt-10 hidden h-[480px] gap-2 lg:flex">
               {img.gallery.map((src, galleryIndex) => {
                 const isActive = galleryIndex === activeGallery;
-
                 return (
-                  <div key={src} className={`gallery-panel group relative overflow-hidden ${isActive ? 'col-span-2 lg:flex-[2.6]' : 'col-span-1 lg:flex-[0.8]'}`}>
+                  <div key={src} className={`gallery-panel group relative overflow-hidden ${isActive ? 'flex-[2.6]' : 'flex-[0.8]'}`}>
                     <img src={src} alt="" className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${isActive ? 'gallery-active-image' : ''}`} />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent p-4 pt-24 sm:p-6 sm:pt-28">
                       <span className="text-[10px] font-bold tracking-[0.2em] text-red-600">0{galleryIndex + 1} / 04</span>
@@ -472,9 +472,35 @@ export default function App() {
                 );
               })}
             </div>
+            {/* Mobile/Tablet: large image + thumbnails */}
+            <div className="mt-10 lg:hidden">
+              <div className="relative h-[300px] overflow-hidden sm:h-[380px]">
+                <img key={activeGallery} src={img.gallery[activeGallery]} alt="" className="gallery-active-image h-full w-full object-cover" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent p-4 pt-20">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-red-600">0{activeGallery + 1} / 04</span>
+                  <p className="mt-1 font-display text-base font-bold uppercase tracking-[0.08em]">{tr.workItems[activeGallery]}</p>
+                  <span className="mt-3 block h-px w-8 bg-white/70" />
+                </div>
+                <div className="absolute bottom-4 right-4 flex items-center gap-2">
+                  <button type="button" onClick={() => setActiveGallery((activeGallery - 1 + img.gallery.length) % img.gallery.length)} aria-label="Předchozí fotografie" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button type="button" onClick={() => setActiveGallery((activeGallery + 1) % img.gallery.length)} aria-label="Další fotografie" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </div>
+              <div className="mt-3 grid grid-cols-4 gap-2">
+                {img.gallery.map((src, index) => (
+                  <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`relative h-16 overflow-hidden transition sm:h-20 ${activeGallery === index ? 'ring-2 ring-red-600' : 'opacity-50 hover:opacity-100'}`}>
+                    <img src={src} alt="" className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
               <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.workBtn} <ArrowRight size={15} /></a>
-              <div className="flex items-center gap-2">
+              <div className="hidden items-center gap-2 lg:flex">
                 {img.gallery.map((src, index) => (
                   <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`h-1 transition-all duration-300 ${activeGallery === index ? 'w-10 bg-red-600' : 'w-5 bg-zinc-600 hover:bg-zinc-300'}`} />
                 ))}
@@ -484,13 +510,13 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 7: REVIEWS (Light bg, Dark cards) ——— */}
-        <section id="reference" className="bg-zinc-100 py-24 text-zinc-900 lg:py-32">
+        <section id="reference" className="bg-zinc-100 py-16 text-zinc-900 lg:py-24">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
-            <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+            <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
               {tr.refH1} <span className="text-red-600">{tr.refH2}</span><Accent color="red" />
             </h2>
-            <div className="mt-14 grid gap-4 md:grid-cols-3">
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
                 <article key={name} className="flex flex-col bg-zinc-900 text-white">
                   <div className="relative h-44 overflow-hidden">
@@ -530,12 +556,12 @@ export default function App() {
         </section>
 
         {/* ——— BLOCK 8: CONTACT (Dark) ——— */}
-        <section id="kontakt" className="border-t border-white/10 bg-[#0a0c0e] py-24 lg:py-32">
+        <section id="kontakt" className="border-t border-white/10 bg-[#0a0c0e] py-16 lg:py-24">
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
-                <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+                <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                   {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
