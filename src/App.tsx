@@ -68,11 +68,13 @@ const translations = {
     svcMore: 'VÍCE INFORMACÍ',
     svcAll: 'VŠECHNY SLUŽBY',
     usaLabel: 'AUTA Z USA',
-    usaTitle: 'OD AMERIKY AŽ NA EVROPSKÉ SILNICE',
+    usaTitle: 'OD AMERIKY AŽ NA',
+    usaTitle2: 'EVROPSKÉ SILNICE',
     usaText: 'Pomáháme s výběrem, dovozem, opravami a úpravami vozů z USA. Zajistíme kompletní proces — od nákupu přes dopravu, přestavbu na evropské standardy až po registraci v ČR.',
     usaBtn: 'VÍCE O AUTECH Z USA',
     whyLabel: 'PROČ FARES',
-    whyH1: 'VÍME, CO DĚLÁME. A DĚLÁME TO POŘÁDNĚ',
+    whyH1: 'VÍME, CO DĚLÁME.',
+    whyH2: 'A DĚLÁME TO POŘÁDNĚ',
     whyFeats: [
       ['ZKUŠENOSTI', 'Zkušený tým a individuální přístup ke každému vozu.', Award],
       ['MODERNÍ VYBAVENÍ', 'Diagnostika a technologie pro moderní automobily.', Cog],
@@ -81,19 +83,22 @@ const translations = {
     ] as [string, string, IconType][],
     whyBtn: 'POZNAT NÁŠ TÝM',
     teamLabel: 'O NÁS',
-    teamH1: 'ZA FARES STOJÍ LIDÉ',
+    teamH1: 'ZA FARES',
+    teamH2: 'STOJÍ LIDÉ',
     teamSub: 'Zkušenosti, poctivá práce a vztah k tomu, co děláme.',
     teamText: 'Autoservis FARES vznikl z vášně pro auta a touhy dělat věci poctivě. Každému vozu věnujeme pozornost a každému zákazníkovi chceme nabídnout férový přístup a řešení, na které se může spolehnout.',
     teamBtn: 'POZNAT NÁŠ TÝM',
     stats: [['5+', 'ČLENŮ TÝMU', CircleUserRound], ['1000+', 'SPOKOJENÝCH ZÁKAZNÍKŮ', Star], ['10 LET', 'ZKUŠENOSTÍ', Settings], ['PRAHA', 'A OKOLÍ', MapPin]] as [string, string, IconType][],
     workLabel: 'NAŠE PRÁCE',
-    workH1: 'PRÁCE, KTERÁ MLUVÍ SAMA ZA SEBE',
+    workH1: 'PRÁCE, KTERÁ',
+    workH2: 'MLUVÍ SAMA ZA SEBE',
     workSub: 'Každý vůz má svůj příběh. My se postaráme o jeho další cestu.',
     workText: 'Od běžného servisu až po náročné opravy a vozy z USA. Děláme práci, na kterou se můžete spolehnout — a výsledky jsou vidět.',
     workBtn: 'ZOBRAZIT VÍCE FOTOGRAFIÍ',
     workItems: ['SERVIS A OPRAVY', 'BRZDY A PODVOZEK', 'DIAGNOSTIKA', 'KAROSERIE'],
     refLabel: 'REFERENCE',
-    refH1: 'CO ŘÍKAJÍ NAŠI ZÁKAZNÍCI',
+    refH1: 'CO ŘÍKAJÍ',
+    refH2: 'NAŠI ZÁKAZNÍCI',
     refBottom: 'PŘES 1000+ SPOKOJENÝCH ZÁKAZNÍKŮ',
     refAllBtn: 'VŠECHNY RECENZE',
     reviews: [
@@ -102,7 +107,8 @@ const translations = {
       ['Petr S.', 'Audi Q7', 'Velmi profesionální přístup a ochota vše vysvětlit. Určitě se vrátím.'],
     ],
     ctaLabel: 'KONTAKT',
-    ctaH1: 'POTŘEBUJETE SERVIS? NAPIŠTE NÁM',
+    ctaH1: 'POTŘEBUJETE SERVIS?',
+    ctaH2: 'NAPIŠTE NÁM',
     ctaSub: 'Domluvíme termín a postaráme se o vaše auto.',
     ctaPhone: 'TELEFON',
     ctaAddr: 'ADRESA',
@@ -135,11 +141,13 @@ const translations = {
     svcMore: 'ПОДРОБНЕЕ',
     svcAll: 'ВСЕ УСЛУГИ',
     usaLabel: 'АВТО ИЗ США',
-    usaTitle: 'ОТ АМЕРИКИ ДО ЕВРОПЕЙСКИХ ДОРОГ',
+    usaTitle: 'ОТ АМЕРИКИ ДО',
+    usaTitle2: 'ЕВРОПЕЙСКИХ ДОРОГ',
     usaText: 'Помогаем с подбором, доставкой, ремонтом и доработкой авто из США. Обеспечиваем полный процесс — от покупки через доставку, адаптацию под стандарты ЕС до регистрации в ЧР.',
     usaBtn: 'ПОДРОБНЕЕ ОБ АВТО ИЗ США',
     whyLabel: 'ПОЧЕМУ FARES',
-    whyH1: 'МЫ ЗНАЕМ, ЧТО ДЕЛАЕМ. И ДЕЛАЕМ ЭТО КАЧЕСТВЕННО',
+    whyH1: 'МЫ ЗНАЕМ, ЧТО ДЕЛАЕМ.',
+    whyH2: 'И ДЕЛАЕМ ЭТО КАЧЕСТВЕННО',
     whyFeats: [
       ['ОПЫТ', 'Опытная команда и индивидуальный подход к каждому авто.', Award],
       ['СОВРЕМЕННОЕ ОБОРУДОВАНИЕ', 'Диагностика и технологии для современных автомобилей.', Cog],
@@ -148,19 +156,22 @@ const translations = {
     ] as [string, string, IconType][],
     whyBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
     teamLabel: 'О НАС',
-    teamH1: 'ЗА FARES СТОЯТ ЛЮДИ',
+    teamH1: 'ЗА FARES',
+    teamH2: 'СТОЯТ ЛЮДИ',
     teamSub: 'Опыт, честная работа и любовь к своему делу.',
     teamText: 'Автосервис FARES создан из любви к автомобилям и желания делать всё качественно. Мы уделяем внимание каждому автомобилю и предлагаем каждому клиенту честный подход и решение, на которое можно положиться.',
     teamBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
     stats: [['5+', 'ЧЛЕНОВ КОМАНДЫ', CircleUserRound], ['1000+', 'ДОВОЛЬНЫХ КЛИЕНТОВ', Star], ['10 ЛЕТ', 'ОПЫТА', Settings], ['ПРАГА', 'И ОКРЕСТНОСТИ', MapPin]] as [string, string, IconType][],
     workLabel: 'НАШИ РАБОТЫ',
-    workH1: 'РАБОТА, КОТОРАЯ ГОВОРИТ САМА ЗА СЕБЯ',
+    workH1: 'РАБОТА, КОТОРАЯ',
+    workH2: 'ГОВОРИТ САМА ЗА СЕБЯ',
     workSub: 'У каждого автомобиля своя история. Мы позаботимся о его дальнейшем пути.',
     workText: 'От обычного сервиса до сложного ремонта и авто из США. Мы делаем работу, которой можно доверять — результат виден.',
     workBtn: 'ПОКАЗАТЬ БОЛЬШЕ ФОТО',
     workItems: ['СЕРВИС И РЕМОНТ', 'ТОРМОЗА И ХОДОВАЯ', 'ДИАГНОСТИКА', 'КУЗОВ'],
     refLabel: 'ОТЗЫВЫ',
-    refH1: 'ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ',
+    refH1: 'ЧТО ГОВОРЯТ',
+    refH2: 'НАШИ КЛИЕНТЫ',
     refBottom: 'БОЛЕЕ 1000+ ДОВОЛЬНЫХ КЛИЕНТОВ',
     refAllBtn: 'ВСЕ ОТЗЫВЫ',
     reviews: [
@@ -169,7 +180,8 @@ const translations = {
       ['Петр С.', 'Audi Q7', 'Очень профессиональный подход и готовность всё объяснить. Обязательно вернусь.'],
     ],
     ctaLabel: 'КОНТАКТЫ',
-    ctaH1: 'НУЖЕН СЕРВИС? НАПИШИТЕ НАМ',
+    ctaH1: 'НУЖЕН СЕРВИС?',
+    ctaH2: 'НАПИШИТЕ НАМ',
     ctaSub: 'Договоримся о времени и позаботимся о вашем авто.',
     ctaPhone: 'ТЕЛЕФОН',
     ctaAddr: 'АДРЕС',
@@ -331,7 +343,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
               <h2 className="mt-8 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-                {tr.usaTitle}<Accent color="white" />
+                {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span><Accent color="white" />
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
@@ -357,7 +369,7 @@ export default function App() {
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
             <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-              {tr.whyH1}<Accent color="white" />
+              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
             </h2>
             <div className="mt-12 grid gap-10 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
@@ -385,7 +397,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
               <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-                {tr.teamH1}<Accent color="white" />
+                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><Accent color="white" />
               </h2>
               <p className="mt-8 text-xl leading-snug text-zinc-200">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
@@ -415,7 +427,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-                  {tr.workH1}<Accent color="white" />
+                  {tr.workH1} <span className="text-red-600">{tr.workH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-xl text-zinc-300">{tr.workSub}</p>
               </div>
@@ -447,7 +459,7 @@ export default function App() {
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
             <h2 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-              {tr.refH1}<Accent color="red" />
+              {tr.refH1} <span className="text-red-600">{tr.refH2}</span><Accent color="red" />
             </h2>
             <div className="mt-14 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
@@ -495,7 +507,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.3] tracking-normal md:text-7xl lg:text-8xl">
-                  {tr.ctaH1}<Accent color="white" />
+                  {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}</span><Accent color="white" />
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
