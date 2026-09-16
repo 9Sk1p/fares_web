@@ -28,6 +28,15 @@ type IconType = typeof Wrench;
 
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
 
+const avatars = [
+  'https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
+  'https://images.pexels.com/photos/13430313/pexels-photo-13430313.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
+  'https://images.pexels.com/photos/15019490/pexels-photo-15019490.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
+  'https://images.pexels.com/photos/35367077/pexels-photo-35367077.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
+  'https://images.pexels.com/photos/29615996/pexels-photo-29615996.png?auto=compress&cs=tinysrgb&h=100&w=100',
+  'https://images.pexels.com/photos/16160801/pexels-photo-16160801.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
+];
+
 const img = {
   hero: 'https://images.pexels.com/photos/15489246/pexels-photo-15489246.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
   usa: 'https://images.pexels.com/photos/28942186/pexels-photo-28942186.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -499,7 +508,7 @@ export default function App() {
                     <span className="font-display text-4xl leading-[1.25] text-red-600">"</span>
                     <p className="mt-2 flex-1 text-sm leading-6 text-zinc-300">{text}</p>
                     <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                      <CircleUserRound size={24} className="text-zinc-500" />
+                      <img src={avatars[idx % avatars.length]} alt="" className="h-8 w-8 rounded-full object-cover" />
                       <span className="font-display text-sm font-bold uppercase">{name}</span>
                     </div>
                   </div>
@@ -510,7 +519,7 @@ export default function App() {
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-2">
                   {[0, 1, 2].map((i) => (
-                    <div key={i} className="flex h-8 w-8 items-center justify-center border-2 border-zinc-100 bg-zinc-300"><CircleUserRound size={16} className="text-zinc-500" /></div>
+                    <img key={i} src={avatars[i]} alt="" className="h-8 w-8 rounded-full border-2 border-zinc-100 object-cover" />
                   ))}
                 </div>
                 <span className="text-xs font-bold text-zinc-600">{tr.refBottom}</span>
