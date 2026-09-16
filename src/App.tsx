@@ -426,10 +426,6 @@ export default function App() {
                 </div>
               ))}
             </div>
-            <div className="absolute right-6 top-28 hidden text-right text-[9px] font-bold uppercase leading-[2] tracking-[0.2em] text-zinc-500 lg:block">
-              SERVIS<br />OPRAVY<br />VOZY Z USA
-              <span className="mt-2 ml-auto block h-px w-10 bg-red-600" />
-            </div>
           </div>
         </section>
 
