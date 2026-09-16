@@ -443,12 +443,12 @@ export default function App() {
               </div>
               <p className="border-l border-zinc-600 pl-6 text-sm leading-6 text-zinc-400">{tr.workText}</p>
             </div>
-            <div className="mt-12 grid h-[420px] grid-cols-2 gap-2 sm:h-[540px] sm:grid-cols-4 lg:h-[560px]">
+            <div className="mt-12 grid h-[520px] grid-cols-2 gap-2 sm:h-[560px] sm:grid-cols-4 lg:h-[560px] lg:grid-cols-[2.6fr_0.8fr_0.8fr_0.8fr]">
               {[activeGallery, ...img.gallery.map((_, index) => index).filter((index) => index !== activeGallery)].map((galleryIndex, position) => {
                 const isActive = position === 0;
 
                 return (
-                  <div key={img.gallery[galleryIndex]} className={`gallery-panel group relative overflow-hidden ${isActive ? 'col-span-2' : 'col-span-1'}`}>
+                  <div key={img.gallery[galleryIndex]} className={`gallery-panel group relative overflow-hidden ${isActive ? 'col-span-2 lg:col-span-1' : 'col-span-1'}`}>
                     <img src={img.gallery[galleryIndex]} alt="" className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${isActive ? 'gallery-active-image' : ''}`} />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent p-4 pt-24 sm:p-6 sm:pt-28">
                       <span className="text-[10px] font-bold tracking-[0.2em] text-red-600">0{galleryIndex + 1} / 04</span>
