@@ -29,7 +29,7 @@ type IconType = typeof Wrench;
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
 
 const img = {
-  hero: 'https://images.pexels.com/photos/9028761/pexels-photo-9028761.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
+  hero: 'https://images.pexels.com/photos/15489246/pexels-photo-15489246.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
   usa: 'https://images.pexels.com/photos/28942186/pexels-photo-28942186.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   why: 'https://images.pexels.com/photos/4489776/pexels-photo-4489776.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   team: 'https://images.pexels.com/photos/7018506/pexels-photo-7018506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
