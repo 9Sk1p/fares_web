@@ -82,7 +82,6 @@ const translations = {
       ['VŠE NA JEDNOM MÍSTĚ', 'Od diagnostiky přes servis až po komplexní opravy.', Car],
       ['FÉROVÉ JEDNÁNÍ', 'Vždy vám řekneme, co je potřeba opravit a proč.', Handshake],
     ] as [string, string, IconType][],
-    whyBtn: 'POZNAT NÁŠ TÝM',
     teamLabel: 'O NÁS',
     teamH1: 'ZA FARES',
     teamH2: 'STOJÍ LIDÉ',
@@ -158,7 +157,6 @@ const translations = {
       ['ВСЁ В ОДНОМ МЕСТЕ', 'От диагностики и сервиса до комплексного ремонта.', Car],
       ['ЧЕСТНОЕ ОТНОШЕНИЕ', 'Всегда объясним, что нужно ремонтировать и почему.', Handshake],
     ] as [string, string, IconType][],
-    whyBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
     teamLabel: 'О НАС',
     teamH1: 'ЗА FARES',
     teamH2: 'СТОЯТ ЛЮДИ',
@@ -369,40 +367,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* ——— BLOCK 4: WHY US (Split 50/50) ——— */}
-        <section id="pro-nas" className="grid min-h-[700px] grid-cols-1 border-b border-white/10 lg:grid-cols-2">
-          <div className="relative min-h-[400px] overflow-hidden lg:min-h-0">
-            <img src={img.why} alt="" className="h-full w-full object-cover grayscale" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            <div className="absolute bottom-8 left-8">
-              <span className="font-display text-4xl font-bold text-white/70">FARES</span>
-              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
-            <RuleLabel>{tr.whyLabel}</RuleLabel>
-            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
-              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
-            </h2>
-            <div className="mt-12 grid gap-10 sm:grid-cols-2">
-              {tr.whyFeats.map(([title, text, Icon], i) => (
-                <div key={title} className="relative pl-14">
-                  <span className="absolute left-0 top-0 font-display text-5xl font-bold text-zinc-200">0{i + 1}</span>
-                  <Icon className="mb-3 text-red-600" size={24} strokeWidth={1.6} />
-                  <h3 className="font-display text-base font-bold uppercase leading-[1.25]">{title}</h3>
-                  <span className="my-3 block h-px w-8 bg-red-600" />
-                  <p className="text-sm leading-6 text-zinc-600">{text}</p>
-                </div>
-              ))}
-            </div>
-            <a href="#o-nas" className="mt-10 inline-flex min-h-12 w-fit items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.whyBtn} <ArrowRight size={15} /></a>
-            <div className="mt-10 flex items-center justify-between border-t border-zinc-300 pt-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Servis <i className="mx-2 text-red-600">•</i> Opravy <i className="mx-2 text-red-600">•</i> Vozy z USA</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ——— BLOCK 5: TEAM (Dark) ——— */}
+        {/* ——— BLOCK 4: TEAM (Dark) ——— */}
         <section id="o-nas" className="relative min-h-[780px] overflow-hidden border-b border-white/10">
           <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
@@ -428,6 +393,39 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* ——— BLOCK 5: WHY US (Split 50/50) ——— */}
+        <section id="pro-nas" className="grid min-h-[700px] grid-cols-1 border-b border-white/10 lg:grid-cols-2">
+          <div className="relative min-h-[400px] overflow-hidden lg:min-h-0">
+            <img src={img.why} alt="" className="h-full w-full object-cover grayscale" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            <div className="absolute bottom-8 left-8">
+              <span className="font-display text-4xl font-bold text-white/70">FARES</span>
+              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
+            <RuleLabel>{tr.whyLabel}</RuleLabel>
+            <h2 className="mt-7 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">
+              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><Accent color="white" />
+            </h2>
+            <div className="mt-12 grid gap-10 sm:grid-cols-2">
+              {tr.whyFeats.map(([title, text, Icon], i) => (
+                <div key={title} className="relative pl-14">
+                  <span className="absolute left-0 top-0 font-display text-5xl font-bold text-zinc-200">0{i + 1}</span>
+                  <Icon className="mb-3 text-red-600" size={24} strokeWidth={1.6} />
+                  <h3 className="font-display text-base font-bold uppercase leading-[1.25]">{title}</h3>
+                  <span className="my-3 block h-px w-8 bg-red-600" />
+                  <p className="text-sm leading-6 text-zinc-600">{text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 flex items-center justify-between border-t border-zinc-300 pt-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Servis <i className="mx-2 text-red-600">•</i> Opravy <i className="mx-2 text-red-600">•</i> Vozy z USA</span>
+            </div>
+          </div>
+        </section>
+
 
         {/* ——— BLOCK 6: GALLERY (Dark) ——— */}
         <section id="prace" className="border-b border-white/10 bg-[#0d1013] py-24 lg:py-32">
