@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; }
 }
 
 .gallery-panel {
-  transition: grid-column 0.5s ease;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1), grid-column 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body { font-family: 'Inter', sans-serif; }
