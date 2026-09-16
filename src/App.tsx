@@ -213,11 +213,7 @@ function RuleLabel({ children }: { children: string }) {
   return (
     <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">
       <span>{children}</span>
-      <span className="flex items-center gap-1.5">
-        <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
-        <span className="h-1.5 w-1.5 rounded-full bg-red-600/60" />
-        <span className="h-1.5 w-1.5 rounded-full bg-red-600/30" />
-      </span>
+      <span className="h-px w-16 bg-red-600" />
     </div>
   );
 }
@@ -305,7 +301,7 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[500px] max-w-[1280px] items-center px-5 py-12 lg:min-h-[560px] lg:px-8">
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">{tr.heroH1}</h1>
+              <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">{tr.heroH1}<span className="text-red-600">.</span></h1>
               <p className="mt-7 text-base text-zinc-300">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
@@ -332,7 +328,7 @@ export default function App() {
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.svcLabel}</RuleLabel>
             <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.svcTitle}
+              {tr.svcTitle}<span className="text-red-600">.</span>
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {tr.svcCards.map((c) => (
@@ -364,7 +360,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.usaLabel}</RuleLabel>
               <h2 className="mt-8 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span>
+                {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}.</span>
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
               <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
@@ -381,7 +377,7 @@ export default function App() {
             <div>
               <RuleLabel>{tr.teamLabel}</RuleLabel>
               <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span>
+                {tr.teamH1} <span className="text-red-600">{tr.teamH2}.</span>
               </h2>
               <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
@@ -413,7 +409,7 @@ export default function App() {
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-16 text-zinc-900 lg:px-16 lg:py-20">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
             <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span>
+              {tr.whyH1} <span className="text-red-600">{tr.whyH2}.</span>
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
@@ -440,7 +436,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.workLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                  {tr.workH1} <span className="text-red-600">{tr.workH2}</span>
+                  {tr.workH1} <span className="text-red-600">{tr.workH2}.</span>
                 </h2>
                 <p className="mt-4 text-base text-zinc-300 sm:text-lg lg:text-xl">{tr.workSub}</p>
               </div>
@@ -504,7 +500,7 @@ export default function App() {
           <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
             <RuleLabel>{tr.refLabel}</RuleLabel>
             <h2 className="mt-6 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-              {tr.refH1} <span className="text-red-600">{tr.refH2}</span>
+              {tr.refH1} <span className="text-red-600">{tr.refH2}.</span>
             </h2>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {tr.reviews.map(([name, car, text], i) => (
@@ -552,7 +548,7 @@ export default function App() {
               <div>
                 <RuleLabel>{tr.ctaLabel}</RuleLabel>
                 <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                  {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}</span>
+                  {tr.ctaH1} <span className="text-red-600">{tr.ctaH2}.</span>
                 </h2>
                 <p className="mt-6 text-lg text-zinc-300">{tr.ctaSub}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
