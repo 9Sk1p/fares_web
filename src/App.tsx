@@ -508,7 +508,7 @@ export default function App() {
                     <span className="font-display text-4xl leading-[1.25] text-red-600">"</span>
                     <p className="mt-2 flex-1 text-sm leading-6 text-zinc-300">{text}</p>
                     <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                      <img src={avatars[idx % avatars.length]} alt="" className="h-8 w-8 rounded-full object-cover" />
+                      <img src={avatars[i % avatars.length]} alt="" className="h-8 w-8 rounded-full object-cover" />
                       <span className="font-display text-sm font-bold uppercase">{name}</span>
                     </div>
                   </div>
