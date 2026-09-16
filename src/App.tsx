@@ -29,7 +29,7 @@ type IconType = typeof Wrench;
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
 
 const img = {
-  hero: 'https://images.pexels.com/photos/7019369/pexels-photo-7019369.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  hero: 'https://images.pexels.com/photos/9028761/pexels-photo-9028761.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
   usa: 'https://images.pexels.com/photos/28942186/pexels-photo-28942186.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   why: 'https://images.pexels.com/photos/4489776/pexels-photo-4489776.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   team: 'https://images.pexels.com/photos/7018506/pexels-photo-7018506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -288,28 +288,25 @@ export default function App() {
       </header>
 
       <main>
-        {/* ——— BLOCK 1: HERO (Dark) ——— */}
-        <section id="domu" className="relative border-b border-white/10 bg-[#0a0c0e] pt-20">
-          <div className="mx-auto grid max-w-[1280px] items-start gap-8 px-5 pb-0 pt-6 sm:pt-8 lg:min-h-[628px] lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-0">
-            <div className="flex self-stretch flex-col justify-center py-6 lg:h-[628px] lg:translate-y-24 lg:py-10">
+        {/* ——— BLOCK 1: HERO (Dark, full-bleed bg) ——— */}
+        <section id="domu" className="relative border-b border-white/10 pt-20">
+          <img src={img.hero} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c0e] via-[#0a0c0e]/85 to-[#0a0c0e]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e] via-transparent to-[#0a0c0e]/40" />
+          <div className="relative mx-auto flex min-h-[620px] max-w-[1280px] items-center px-5 py-16 lg:min-h-[700px] lg:px-8">
+            <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
               <h1 className="mt-6 font-display text-6xl font-bold uppercase leading-[1.18] tracking-normal md:text-7xl lg:text-8xl">{tr.heroH1}</h1>
-              <p className="mt-7 text-base text-zinc-400">{tr.heroSub}</p>
+              <p className="mt-7 text-base text-zinc-300">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
-                <a href="#sluzby" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.heroBtn2} <ArrowRight size={15} /></a>
+                <a href="#sluzby" className="inline-flex min-h-12 items-center gap-4 border border-white/30 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.heroBtn2} <ArrowRight size={15} /></a>
               </div>
               <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.32em] text-zinc-500">Servis <span className="text-red-600">&bull;</span> Opravy <span className="text-red-600">&bull;</span> Vozy z USA</p>
             </div>
-            <div className="relative hidden self-start overflow-hidden lg:block">
-              <img src={img.hero} alt="" className="block h-auto w-full object-contain object-top" />
-              <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-[#0a0c0e] to-transparent" />
-              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0a0c0e] to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0a0c0e] to-transparent" />
-            </div>
           </div>
           {/* Benefits strip */}
-          <div className="border-t border-white/10 bg-[#0d0f12]">
+          <div className="relative border-t border-white/10 bg-[#0d0f12]/90 backdrop-blur-sm">
             <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-0 sm:grid-cols-3">
               {([Settings, ShieldCheck, CircleUserRound] as IconType[]).map((Icon, i) => (
                 <div key={tr.benefits[i]} className={`flex items-center gap-6 px-6 py-8 lg:px-10 lg:py-10 ${i > 0 ? 'border-t border-white/10 sm:border-l sm:border-t-0' : ''}`}>
