@@ -290,6 +290,7 @@ export default function App() {
             <div className="relative hidden self-start overflow-hidden lg:block">
               <img src={img.hero} alt="" className="block h-auto w-full object-contain object-top" />
               <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-[#0a0c0e] to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0a0c0e] to-transparent" />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0a0c0e] to-transparent" />
             </div>
           </div>
