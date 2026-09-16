@@ -371,10 +371,6 @@ export default function App() {
               <span className="font-display text-4xl font-bold text-white/70">FARES</span>
               <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
             </div>
-            <div className="absolute right-6 top-6 text-right text-[9px] font-bold uppercase leading-[2] tracking-[0.2em] text-zinc-400">
-              SERVIS<br />OPRAVY<br />VOZY Z USA
-              <span className="mt-2 ml-auto block h-px w-10 bg-red-600" />
-            </div>
           </div>
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-20 text-zinc-900 lg:px-16 lg:py-24">
             <RuleLabel>{tr.whyLabel}</RuleLabel>
