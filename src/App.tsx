@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   Award,
@@ -232,7 +232,16 @@ function Logo() {
 export default function App() {
   const [lang, setLang] = useState<Lang>('cz');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeGallery, setActiveGallery] = useState(0);
   const tr = translations[lang];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveGallery((current) => (current + 1) % img.gallery.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#0a0c0e] text-zinc-100">
@@ -434,22 +443,38 @@ export default function App() {
               </div>
               <p className="border-l border-zinc-600 pl-6 text-sm leading-6 text-zinc-400">{tr.workText}</p>
             </div>
-            <div className="mt-12 grid h-[400px] grid-cols-4 gap-2 sm:h-[520px]">
-              {img.gallery.map((src, i) => (
-                <div key={src} className={`relative overflow-hidden ${i === 0 ? 'col-span-2' : ''}`}>
-                  <img src={src} alt="" className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-4 pt-16">
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-red-600">0{i + 1} / 04</span>
-                    <p className="mt-1 font-display text-sm font-bold uppercase sm:text-base">{tr.workItems[i]}</p>
+            <div className="mt-12 grid h-[420px] grid-cols-2 gap-2 sm:h-[540px] sm:grid-cols-4 lg:h-[560px]">
+              {[activeGallery, ...img.gallery.map((_, index) => index).filter((index) => index !== activeGallery)].map((galleryIndex, position) => {
+                const isActive = position === 0;
+
+                return (
+                  <div key={img.gallery[galleryIndex]} className={`gallery-panel group relative overflow-hidden ${isActive ? 'col-span-2' : 'col-span-1'}`}>
+                    <img src={img.gallery[galleryIndex]} alt="" className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${isActive ? 'gallery-active-image' : ''}`} />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent p-4 pt-24 sm:p-6 sm:pt-28">
+                      <span className="text-[10px] font-bold tracking-[0.2em] text-red-600">0{galleryIndex + 1} / 04</span>
+                      <p className="mt-1 font-display text-sm font-bold uppercase tracking-[0.08em] sm:text-base">{tr.workItems[galleryIndex]}</p>
+                      <span className="mt-3 block h-px w-8 bg-white/70" />
+                    </div>
+                    {isActive && (
+                      <div className="absolute bottom-6 right-6 flex items-center gap-2">
+                        <button type="button" onClick={() => setActiveGallery((activeGallery - 1 + img.gallery.length) % img.gallery.length)} aria-label="Předchozí fotografie" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
+                          <ChevronLeft size={17} />
+                        </button>
+                        <button type="button" onClick={() => setActiveGallery((activeGallery + 1) % img.gallery.length)} aria-label="Další fotografie" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
+                          <ChevronRight size={17} />
+                        </button>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
               <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.workBtn} <ArrowRight size={15} /></a>
-              <div className="flex items-center gap-3">
-                <button type="button" className="flex h-11 w-11 items-center justify-center border border-zinc-600 transition hover:border-white"><ChevronLeft size={17} /></button>
-                <button type="button" className="flex h-11 w-11 items-center justify-center border border-zinc-600 transition hover:border-white"><ChevronRight size={17} /></button>
+              <div className="flex items-center gap-2">
+                {img.gallery.map((src, index) => (
+                  <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`h-1 transition-all duration-300 ${activeGallery === index ? 'w-10 bg-red-600' : 'w-5 bg-zinc-600 hover:bg-zinc-300'}`} />
+                ))}
               </div>
             </div>
           </div>
