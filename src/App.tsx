@@ -223,7 +223,7 @@ function Logo() {
         <strong className="block font-display text-sm tracking-[0.08em]">
           AUTOSERVIS <em className="not-italic text-red-600">FARES</em>
         </strong>
-        <small className="mt-1 block text-[7px] tracking-[0.18em] text-zinc-500">CARS • PEOPLE • TRUST</small>
+        <small className="mt-1 block text-[7px] tracking-[0.18em] text-zinc-500">Servis • Opravy • Vozy z USA</small>
       </span>
     </a>
   );
@@ -363,7 +363,7 @@ export default function App() {
               <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
             </div>
             <div className="absolute right-6 top-6 text-right text-[9px] font-bold uppercase leading-[2] tracking-[0.2em] text-zinc-400">
-              CARS<br />PEOPLE<br />TRUST
+              SERVIS<br />OPRAVY<br />VOZY Z USA
               <span className="mt-2 ml-auto block h-px w-10 bg-red-600" />
             </div>
           </div>
@@ -385,7 +385,7 @@ export default function App() {
             </div>
             <a href="#o-nas" className="mt-10 inline-flex min-h-12 w-fit items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.whyBtn} <ArrowRight size={15} /></a>
             <div className="mt-10 flex items-center justify-between border-t border-zinc-300 pt-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">CARS <i className="mx-2 text-red-600">•</i> PEOPLE <i className="mx-2 text-red-600">•</i> TRUST</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Servis <i className="mx-2 text-red-600">•</i> Opravy <i className="mx-2 text-red-600">•</i> Vozy z USA</span>
             </div>
           </div>
         </section>
@@ -415,7 +415,7 @@ export default function App() {
               ))}
             </div>
             <div className="absolute right-6 top-28 hidden text-right text-[9px] font-bold uppercase leading-[2] tracking-[0.2em] text-zinc-500 lg:block">
-              GOOD CARS<br />HAPPIER PEOPLE
+              SERVIS<br />OPRAVY<br />VOZY Z USA
               <span className="mt-2 ml-auto block h-px w-10 bg-red-600" />
             </div>
           </div>
@@ -540,7 +540,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e]/80 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <span className="font-display text-3xl font-bold text-white/70">FARES</span>
-                  <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-zinc-400">CARS • PEOPLE • TRUST</p>
+                  <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-zinc-400">Servis • Opravy • Vozy z USA</p>
                 </div>
               </div>
             </div>
@@ -564,7 +564,7 @@ export default function App() {
         </div>
         <div className="mx-auto flex max-w-[1280px] flex-col gap-3 border-t border-white/10 px-5 py-6 text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-600 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <span>{tr.footer}</span>
-          <span className="text-zinc-500">CARS <i className="mx-1 text-red-600">•</i> PEOPLE <i className="mx-1 text-red-600">•</i> TRUST</span>
+          <span className="text-zinc-500">Servis <i className="mx-1 text-red-600">•</i> Opravy <i className="mx-1 text-red-600">•</i> Vozy z USA</span>
         </div>
       </footer>
     </div>
