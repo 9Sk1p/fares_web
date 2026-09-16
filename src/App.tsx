@@ -486,9 +486,9 @@ export default function App() {
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
               <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.workBtn} <ArrowRight size={15} /></a>
-              <div className="hidden items-center gap-2 lg:flex">
+              <div className="hidden items-center gap-2.5 lg:flex">
                 {img.gallery.map((src, index) => (
-                  <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`h-1 transition-all duration-300 ${activeGallery === index ? 'w-10 bg-red-600' : 'w-5 bg-zinc-600 hover:bg-zinc-300'}`} />
+                  <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${activeGallery === index ? 'scale-125 bg-red-600' : 'bg-zinc-600 hover:bg-zinc-300'}`} />
                 ))}
               </div>
             </div>
