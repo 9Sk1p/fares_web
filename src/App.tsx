@@ -454,16 +454,6 @@ export default function App() {
                       <p className="mt-1 font-display text-sm font-bold uppercase tracking-[0.08em] sm:text-base">{tr.workItems[galleryIndex]}</p>
                       <span className="mt-3 block h-px w-8 bg-white/70" />
                     </div>
-                    {isActive && (
-                      <div className="absolute bottom-6 right-6 flex items-center gap-2">
-                        <button type="button" onClick={() => setActiveGallery((activeGallery - 1 + img.gallery.length) % img.gallery.length)} aria-label="Předchozí fotografie" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
-                          <ChevronLeft size={17} />
-                        </button>
-                        <button type="button" onClick={() => setActiveGallery((activeGallery + 1) % img.gallery.length)} aria-label="Další fotografie" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-black/20 text-white backdrop-blur-sm transition hover:border-white hover:bg-red-600">
-                          <ChevronRight size={17} />
-                        </button>
-                      </div>
-                    )}
                   </div>
                 );
               })}
