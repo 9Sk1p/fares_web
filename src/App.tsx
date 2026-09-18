@@ -381,7 +381,6 @@ export default function App() {
               </h2>
               <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
               <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
-              <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.teamBtn} <ArrowRight size={15} /></a>
             </div>
             <div className="mt-12 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
               {tr.stats.map(([value, label, Icon]) => (
@@ -484,8 +483,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-              <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 border border-zinc-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.workBtn} <ArrowRight size={15} /></a>
+            <div className="mt-8 flex flex-wrap items-center justify-end gap-4">
               <div className="hidden items-center gap-2 lg:flex">
                 {img.gallery.map((src, index) => (
                   <button key={src} type="button" onClick={() => setActiveGallery(index)} aria-label={`Fotografie ${index + 1}`} className={`h-1 transition-all duration-300 ${activeGallery === index ? 'w-10 bg-red-600' : 'w-5 bg-zinc-600 hover:bg-zinc-300'}`} />
@@ -536,7 +534,7 @@ export default function App() {
                 </div>
                 <span className="text-xs font-bold text-zinc-600">{tr.refBottom}</span>
               </div>
-              <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.refAllBtn} <ArrowRight size={15} /></a>
+              <a href="https://maps.app.goo.gl/e8FDaSTKWFBbw8m2A?g_st=it" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.refAllBtn} <ArrowRight size={15} /></a>
             </div>
           </div>
         </section>
