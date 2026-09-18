@@ -111,9 +111,9 @@ const translations = {
     refBottom: 'PŘES 100+ SPOKOJENÝCH ZÁKAZNÍKŮ',
     refAllBtn: 'VŠECHNY RECENZE',
     reviews: [
-      ['Martin K.', 'BMW 5', 'Rychlá domluva, férové jednání a skvěle odvedená práce. Auto jezdí jako nové.'],
-      ['Jan P.', 'Ford Mustang', 'Potřeboval jsem opravit auto po nehodě. Všechno vyřešili od začátku do konce. Doporučuji.'],
-      ['Petr S.', 'Audi Q7', 'Velmi profesionální přístup a ochota vše vysvětlit. Určitě se vrátím.'],
+      ['Tomáš R.', 'VW Golf', 'Dovolen servisem, obsluha na výši, skvělý přístup k zákazníkům. Servisuji auto u nich už po několikáté! Doporučuji.'],
+      ['Martin K.', 'BMW 5', 'Neustále servisuji v tomto autoservisu — vždy vše na úrovni. Pracují rychle, pečlivě a bez zbytečného nabízení. Ceny jsou adekvátní, přístup k zákazníkovi je skvělý. Klidně můžete svěřit své auto. Doporučuji!'],
+      ['Jan P.', 'Ford Mustang', 'Skvělý autoservis! Vše udělali rychle a kvalitně, bez nabízení zbytečných služeb. Kluci ví, co dělají, vše vysvětlí srozumitelně. Zůstal jsem velmi spokojen, budu se vracet. Doporučuji.'],
     ],
     ctaLabel: 'KONTAKT',
     ctaH1: 'POTŘEBUJETE SERVIS?',
@@ -186,9 +186,9 @@ const translations = {
     refBottom: 'БОЛЕЕ 100+ ДОВОЛЬНЫХ КЛИЕНТОВ',
     refAllBtn: 'ВСЕ ОТЗЫВЫ',
     reviews: [
-      ['Мартин К.', 'BMW 5', 'Быстрая договоренность, честный подход и отлично выполненная работа. Машина ездит как новая.'],
-      ['Ян П.', 'Ford Mustang', 'Нужно было отремонтировать авто после аварии. Всё решили от начала до конца. Рекомендую.'],
-      ['Петр С.', 'Audi Q7', 'Очень профессиональный подход и готовность всё объяснить. Обязательно вернусь.'],
+      ['Томаш Р.', 'VW Golf', 'Доволен сервисом, обслуживание на высоте, отличный подход к клиентам. Далеко не первый раз обслуживаю свою машину у них! Рекомендую.'],
+      ['Мартин К.', 'BMW 5', 'Постоянно обслуживаюсь в этом автосервисе — всё всегда на уровне. Работают быстро, аккуратно и без лишних навязываний. Цены адекватные, отношение к клиенту отличное. Можно спокойно доверять свою машину. Рекомендую!'],
+      ['Ян П.', 'Ford Mustang', 'Отличный автосервис! Всё сделали быстро и качественно, без навязывания лишних услуг. Ребята знают своё дело, всё объясняют понятно. Остался очень доволен, буду обращаться ещё. Рекомендую.'],
     ],
     ctaLabel: 'КОНТАКТЫ',
     ctaH1: 'НУЖЕН СЕРВИС?',
@@ -369,33 +369,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* ——— BLOCK 4: TEAM (Dark) ——— */}
-        <section id="o-nas" className="relative overflow-hidden border-b border-white/10">
-          <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
-          <div className="relative mx-auto flex max-w-[1280px] flex-col px-5 py-16 lg:px-8">
-            <div>
-              <RuleLabel>{tr.teamLabel}</RuleLabel>
-              <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
-                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><span className="ml-1 text-red-600">.</span>
-              </h2>
-              <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
-              <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
-            </div>
-            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
-              {tr.stats.map(([value, label, Icon]) => (
-                <div key={label} className="flex flex-col">
-                  <Icon className="mb-3 text-white" size={24} strokeWidth={1.4} />
-                  <strong className="block font-display text-2xl font-bold sm:text-3xl">{value}</strong>
-                  <span className="mt-1 block h-10 max-w-[140px] text-[10px] font-bold uppercase leading-5 tracking-[0.14em] text-zinc-400">{label}</span>
-                  <span className="mt-auto block h-px w-8 bg-red-600" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ——— BLOCK 5: WHY US (Split 50/50) ——— */}
+        {/* ——— BLOCK 4: WHY US (Split 50/50) ——— */}
         <section id="pro-nas" className="grid min-h-[600px] grid-cols-1 border-b border-white/10 lg:grid-cols-2">
           <div className="relative min-h-[400px] overflow-hidden lg:min-h-0">
             <img src={img.why} alt="" className="h-full w-full object-cover grayscale" />
@@ -423,6 +397,32 @@ export default function App() {
             </div>
             <div className="mt-10 flex items-center justify-between border-t border-zinc-300 pt-6">
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Servis <i className="mx-2 text-red-600">•</i> Opravy <i className="mx-2 text-red-600">•</i> Vozy z USA</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ——— BLOCK 5: TEAM (Dark) ——— */}
+        <section id="o-nas" className="relative overflow-hidden border-b border-white/10">
+          <img src={img.team} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#090b0d] via-[#090b0d]/70 to-transparent" />
+          <div className="relative mx-auto flex max-w-[1280px] flex-col px-5 py-16 lg:px-8">
+            <div>
+              <RuleLabel>{tr.teamLabel}</RuleLabel>
+              <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
+                {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><span className="ml-1 text-red-600">.</span>
+              </h2>
+              <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
+              <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
+            </div>
+            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
+              {tr.stats.map(([value, label, Icon]) => (
+                <div key={label} className="flex flex-col">
+                  <Icon className="mb-3 text-white" size={24} strokeWidth={1.4} />
+                  <strong className="block font-display text-2xl font-bold sm:text-3xl">{value}</strong>
+                  <span className="mt-1 block h-10 max-w-[140px] text-[10px] font-bold uppercase leading-5 tracking-[0.14em] text-zinc-400">{label}</span>
+                  <span className="mt-auto block h-px w-8 bg-red-600" />
+                </div>
+              ))}
             </div>
           </div>
         </section>
