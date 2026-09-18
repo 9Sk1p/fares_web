@@ -27,6 +27,7 @@ type Lang = 'cz' | 'ru';
 type IconType = typeof Wrench;
 
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
+const usaWhatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20dotaz%20ohledn%C4%9B%20auta%20z%20USA.';
 
 const avatars = [
   'https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
@@ -39,7 +40,7 @@ const avatars = [
 
 const img = {
   hero: 'https://images.pexels.com/photos/15489246/pexels-photo-15489246.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
-  usa: 'https://images.pexels.com/photos/28942186/pexels-photo-28942186.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  usa: 'https://images.unsplash.com/photo-1711512302274-8aafe96481bb?w=1200&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGZvcmR8ZW58MHx8MHx8fDA%3D',
   why: 'https://images.pexels.com/photos/4489776/pexels-photo-4489776.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   team: 'https://images.pexels.com/photos/7018506/pexels-photo-7018506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   contact: 'https://images.pexels.com/photos/9572045/pexels-photo-9572045.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -354,7 +355,7 @@ export default function App() {
 
         {/* ——— BLOCK 3: USA CARS (Dark) ——— */}
         <section id="usa" className="relative min-h-[560px] overflow-hidden border-y border-white/10">
-          <img src={img.usa} alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-60" />
+          <img src={img.usa} alt="Ford z USA" className="absolute inset-0 h-full w-full object-contain object-right opacity-75" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 25%, black 88%, transparent 100%)' }} />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
           <div className="relative mx-auto flex min-h-[560px] max-w-[1280px] items-center px-5 py-16 lg:px-8">
             <div>
@@ -363,7 +364,7 @@ export default function App() {
                 {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span><span className="ml-1 text-red-600">.</span>
               </h2>
               <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
-              <a href="#kontakt" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
+              <a href={usaWhatsappUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
               <p className="mt-12 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">AMERICAN CARS<br />EUROPEAN ROADS</p>
             </div>
           </div>
