@@ -29,6 +29,21 @@ type IconType = typeof Wrench;
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
 const usaWhatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20dotaz%20ohledn%C4%9B%20auta%20z%20USA.';
 
+const servicePriceGroups = {
+  cz: [
+    { title: 'MOTOROVÉ OPRAVY', items: [['Výměna rozvodů', 'OD 4 500 Kč'], ['Čištění DPF', 'OD 3 500 Kč'], ['Výměna turba', 'OD 3 500 Kč'], ['Další opravy', 'CENA DOHODOU']] },
+    { title: 'POHON KOL A NÁPRAVY', items: [['Výměna spojky', 'OD 4 000 Kč'], ['Oprava tlumičů a stabilizátorů', 'OD 1 000 Kč'], ['Údržba a výměna zapalovacích svíček', 'OD 400 Kč']] },
+    { title: 'DALŠÍ SLUŽBY', items: [['Leštění a čištění interiéru', 'OD 2 000 Kč'], ['Silniční asistence a odvoz vozidla', 'OD 1 500 Kč'], ['Montáž doplňkového příslušenství', 'CENA DOHODOU']] },
+    { title: 'SERVIS A DIAGNOSTIKA', items: [['Diagnostika vozidla', 'DLE ROZSAHU'], ['Brzdy a podvozek', 'DLE ROZSAHU'], ['Karosářské opravy', 'DLE ROZSAHU'], ['Dovoz a úprava vozů z USA', 'CENA DOHODOU']] },
+  ],
+  ru: [
+    { title: 'РЕМОНТ ДВИГАТЕЛЯ', items: [['Замена ГРМ', 'ОТ 4 500 Kč'], ['Чистка DPF', 'ОТ 3 500 Kč'], ['Замена турбины', 'ОТ 3 500 Kč'], ['Другие работы', 'ПО ДОГОВОРЁННОСТИ']] },
+    { title: 'ПРИВОД И ХОДОВАЯ', items: [['Замена сцепления', 'ОТ 4 000 Kč'], ['Ремонт амортизаторов и стабилизаторов', 'ОТ 1 000 Kč'], ['Обслуживание и замена свечей зажигания', 'ОТ 400 Kč']] },
+    { title: 'ДРУГИЕ УСЛУГИ', items: [['Полировка и чистка салона', 'ОТ 2 000 Kč'], ['Дорожная помощь и эвакуация автомобиля', 'ОТ 1 500 Kč'], ['Установка дополнительного оборудования', 'ПО ДОГОВОРЁННОСТИ']] },
+    { title: 'СЕРВИС И ДИАГНОСТИКА', items: [['Диагностика автомобиля', 'ПО ОБЪЁМУ'], ['Тормоза и ходовая часть', 'ПО ОБЪЁМУ'], ['Кузовной ремонт', 'ПО ОБЪЁМУ'], ['Доставка и доработка авто из США', 'ПО ДОГОВОРЁННОСТИ']] },
+  ],
+} as const;
+
 const avatars = [
   'https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
   'https://images.pexels.com/photos/13430313/pexels-photo-13430313.jpeg?auto=compress&cs=tinysrgb&h=100&w=100',
@@ -60,6 +75,7 @@ const translations = {
   cz: {
     nav: [['Domů', '#domu'], ['Služby', '#sluzby'], ['Auta z USA', '#usa'], ['O nás', '#o-nas'], ['Reference', '#reference'], ['Kontakt', '#kontakt']],
     cta: 'Objednat servis',
+    phoneCta: 'Zavolat',
     heroLabel: 'Autoservis Fares',
     heroH1: 'SPOLEHLIVÝ SERVIS PRO KAŽDÉ AUTO',
     heroSub: 'Kvalitní servis. Férový přístup. Řešení na míru.',
@@ -77,6 +93,10 @@ const translations = {
     ],
     svcMore: 'VÍCE INFORMACÍ',
     svcAll: 'VŠECHNY SLUŽBY',
+    servicesTitle: 'CENÍK NAŠICH SLUŽEB',
+    servicesSubtitle: 'Ceny jsou orientační a mohou se lišit podle typu vozu a rozsahu práce.',
+    servicesNote: 'Potřebujete přesnou kalkulaci? Napište nám nebo zavolejte.',
+    servicesClose: 'Zavřít',
     usaLabel: 'AUTA Z USA',
     usaTitle: 'OD AMERIKY AŽ NA',
     usaTitle2: 'EVROPSKÉ SILNICE',
@@ -135,7 +155,7 @@ const translations = {
   ru: {
     nav: [['Главная', '#domu'], ['Услуги', '#sluzby'], ['Авто из США', '#usa'], ['О нас', '#o-nas'], ['Отзывы', '#reference'], ['Контакты', '#kontakt']],
     cta: 'Записаться в сервис',
-    heroLabel: 'Автосервис Fares',
+    phoneCta: 'Позвонить',    heroLabel: 'Автосервис Fares',
     heroH1: 'НАДЕЖНЫЙ СЕРВИС ДЛЯ КАЖДОГО АВТО',
     heroSub: 'Качественный сервис. Честный подход. Индивидуальные решения.',
     heroBtn: 'ЗАПИСАТЬСЯ В СЕРВИС',
@@ -152,6 +172,10 @@ const translations = {
     ],
     svcMore: 'ПОДРОБНЕЕ',
     svcAll: 'ВСЕ УСЛУГИ',
+    servicesTitle: 'ПРАЙС-ЛИСТ НАШИХ УСЛУГ',
+    servicesSubtitle: 'Цены являются ориентировочными и могут зависеть от модели автомобиля и объёма работ.',
+    servicesNote: 'Нужен точный расчёт? Напишите нам или позвоните.',
+    servicesClose: 'Закрыть',
     usaLabel: 'АВТО ИЗ США',
     usaTitle: 'ОТ АМЕРИКИ ДО',
     usaTitle2: 'ЕВРОПЕЙСКИХ ДОРОГ',
@@ -243,7 +267,20 @@ export default function App() {
   const [lang, setLang] = useState<Lang>('cz');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeGallery, setActiveGallery] = useState(0);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const tr = translations[lang];
+  const priceGroups = servicePriceGroups[lang];
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setServicesOpen(false);
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [servicesOpen]);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -273,7 +310,10 @@ export default function App() {
               <span className="text-zinc-700">|</span>
               <button type="button" onClick={() => setLang('ru')} className={lang === 'ru' ? 'text-white' : 'text-zinc-500 hover:text-white'}>RU</button>
             </div>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="hidden bg-red-600 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500 sm:block">{tr.cta}</a>
+            <div className="hidden items-center gap-2 sm:flex">
+              <a href="tel:+420777905432" className="inline-flex items-center gap-2 border border-white/20 px-3 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:border-red-600 hover:text-red-500"><Phone size={13} /> {tr.phoneCta}</a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="bg-red-600 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500 sm:block">{tr.cta}</a>
+            </div>
             <button type="button" onClick={() => setMobileOpen(!mobileOpen)} className="flex h-11 w-11 items-center justify-center border border-white/15 lg:hidden" aria-label={tr.menuAria}>{mobileOpen ? <X size={19} /> : <Menu size={19} />}</button>
           </div>
         </div>
@@ -287,7 +327,10 @@ export default function App() {
               <span className="text-zinc-700">|</span>
               <button type="button" onClick={() => { setLang('ru'); setMobileOpen(false); }} className={lang === 'ru' ? 'text-white' : 'text-zinc-500'}>RU</button>
             </div>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-4 bg-red-600 px-4 py-4 text-center text-xs font-bold uppercase">{tr.cta}</a>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <a href="tel:+420777905432" className="inline-flex items-center justify-center gap-2 border border-white/20 px-3 py-4 text-center text-[10px] font-bold uppercase"><Phone size={14} /> {tr.phoneCta}</a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="bg-red-600 px-3 py-4 text-center text-[10px] font-bold uppercase">{tr.cta}</a>
+            </div>
           </nav>
         )}
       </header>
@@ -347,7 +390,7 @@ export default function App() {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <a href="#kontakt" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.svcAll} <ArrowRight size={15} /></a>
+              <button type="button" onClick={() => setServicesOpen(true)} className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.svcAll} <ArrowRight size={15} /></button>
             </div>
           </div>
         </section>
@@ -585,6 +628,46 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      {servicesOpen && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm" role="presentation" onClick={() => setServicesOpen(false)}>
+          <div className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto border border-white/15 bg-[#0c0e11] shadow-2xl shadow-black/50" role="dialog" aria-modal="true" aria-labelledby="services-modal-title" onClick={(event) => event.stopPropagation()}>
+            <div className="sticky top-0 z-10 flex items-start justify-between gap-6 border-b border-white/10 bg-[#0c0e11]/95 px-6 py-6 backdrop-blur-md sm:px-10 sm:py-8">
+              <div>
+                <RuleLabel>{tr.svcLabel}</RuleLabel>
+                <h2 id="services-modal-title" className="mt-4 font-display text-3xl font-bold uppercase leading-[1.15] sm:text-5xl">{tr.servicesTitle}<span className="ml-1 text-red-600">.</span></h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-400">{tr.servicesSubtitle}</p>
+              </div>
+              <button type="button" onClick={() => setServicesOpen(false)} aria-label={tr.servicesClose} className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-zinc-300 transition hover:border-red-600 hover:bg-red-600 hover:text-white"><X size={19} /></button>
+            </div>
+            <div className="grid gap-4 p-6 sm:grid-cols-2 sm:p-10">
+              {priceGroups.map((group) => (
+                <section key={group.title} className="border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
+                  <div className="mb-5 flex items-start gap-3">
+                    <span className="font-display text-3xl font-bold leading-none text-red-600">0{priceGroups.indexOf(group) + 1}</span>
+                    <h3 className="pt-1 font-display text-lg font-bold uppercase leading-[1.25] text-white">{group.title}</h3>
+                  </div>
+                  <div className="space-y-0">
+                    {group.items.map(([service, price]) => (
+                      <div key={service} className="flex items-start justify-between gap-4 border-t border-white/10 py-4">
+                        <span className="text-sm leading-5 text-zinc-300">{service}</span>
+                        <span className="shrink-0 text-right text-[10px] font-bold uppercase tracking-[0.08em] text-red-500">{price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+            <div className="flex flex-col gap-5 border-t border-white/10 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+              <p className="max-w-xl text-sm leading-6 text-zinc-400">{tr.servicesNote}</p>
+              <div className="flex shrink-0 flex-wrap gap-2">
+                <a href="tel:+420777905432" className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-4 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:border-white"><Phone size={14} /> {tr.phoneCta}</a>
+                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 bg-red-600 px-4 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500"><MessageCircle size={14} /> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ——— FOOTER ——— */}
       <footer className="border-t border-white/10 bg-[#080a0c]">
