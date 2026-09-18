@@ -383,9 +383,6 @@ export default function App() {
                   <span className="my-5 block h-px w-10 bg-red-600" />
                   <h3 className="font-display text-xl font-bold uppercase leading-[1.25]">{c.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600">{c.text}</p>
-                  <a href="#kontakt" className="mt-6 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-900 transition hover:text-red-600">
-                    {tr.svcMore} <ArrowRight size={13} />
-                  </a>
                 </article>
               ))}
             </div>
