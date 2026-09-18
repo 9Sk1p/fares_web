@@ -604,7 +604,7 @@ export default function App() {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">{tr.ctaAddr}</span>
-                    <p className="mt-2 text-sm font-bold text-white">{tr.ctaAddrVal}</p>
+                    <a href="https://maps.app.goo.gl/e8FDaSTKWFBbw8m2A?g_st=it" target="_blank" rel="noreferrer" className="mt-2 block text-sm font-bold text-white transition hover:text-red-500">{tr.ctaAddrVal}</a>
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">{tr.ctaHours}</span>
@@ -628,7 +628,7 @@ export default function App() {
 
       {servicesOpen && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm" role="presentation" onClick={() => setServicesOpen(false)}>
-          <div className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto border border-white/15 bg-[#0c0e11] shadow-2xl shadow-black/50" role="dialog" aria-modal="true" aria-labelledby="services-modal-title" onClick={(event) => event.stopPropagation()}>
+          <div className="relative max-h-[90vh] w-full max-w-5xl overflow-x-hidden overflow-y-auto border border-white/15 bg-[#0c0e11] shadow-2xl shadow-black/50" role="dialog" aria-modal="true" aria-labelledby="services-modal-title" onClick={(event) => event.stopPropagation()}>
             <div className="sticky top-0 z-10 flex items-start justify-between gap-6 border-b border-white/10 bg-[#0c0e11]/95 px-6 py-6 backdrop-blur-md sm:px-10 sm:py-8">
               <div>
                 <RuleLabel>{tr.svcLabel}</RuleLabel>
@@ -639,16 +639,16 @@ export default function App() {
             </div>
             <div className="grid gap-4 p-6 sm:grid-cols-2 sm:p-10">
               {priceGroups.map((group) => (
-                <section key={group.title} className="border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
+                <section key={group.title} className="min-w-0 border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
                   <div className="mb-5 flex items-start gap-3">
                     <span className="font-display text-3xl font-bold leading-none text-red-600">0{priceGroups.indexOf(group) + 1}</span>
                     <h3 className="pt-1 font-display text-lg font-bold uppercase leading-[1.25] text-white">{group.title}</h3>
                   </div>
                   <div className="space-y-0">
                     {group.items.map(([service, price]) => (
-                      <div key={service} className="flex items-start justify-between gap-4 border-t border-white/10 py-4">
-                        <span className="text-sm leading-5 text-zinc-300">{service}</span>
-                        <span className="shrink-0 text-right text-[10px] font-bold uppercase tracking-[0.08em] text-red-500">{price}</span>
+                      <div key={service} className="flex min-w-0 items-start justify-between gap-3 border-t border-white/10 py-4">
+                        <span className="min-w-0 text-sm leading-5 text-zinc-300">{service}</span>
+                        <span className="max-w-[48%] break-words text-right text-[10px] font-bold uppercase tracking-[0.08em] text-red-500">{price}</span>
                       </div>
                     ))}
                   </div>
@@ -673,7 +673,7 @@ export default function App() {
           <div className="flex flex-col items-center justify-center gap-5 text-zinc-400 sm:flex-row sm:gap-8">
             <div className="flex items-center gap-3">
               <MapPin size={16} className="text-red-600" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em]">{tr.footerAddr}</span>
+              <a href="https://maps.app.goo.gl/e8FDaSTKWFBbw8m2A?g_st=it" target="_blank" rel="noreferrer" className="text-[10px] font-bold uppercase tracking-[0.12em] transition hover:text-white">{tr.footerAddr}</a>
             </div>
             <div className="flex items-center gap-3">
               <Phone size={16} className="text-red-600" />
