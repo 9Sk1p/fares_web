@@ -397,7 +397,7 @@ export default function App() {
 
         {/* ——— BLOCK 3: USA CARS (Dark) ——— */}
         <section id="usa" className="relative min-h-[560px] overflow-hidden border-y border-white/10">
-          <img src="/images/Gemini_Generated_Image_95hqce95hqce95hq.jpg" alt="Ford z USA v přístavu" className="absolute inset-0 h-full w-full object-cover object-[62%_center] opacity-75" />
+          <img src="/images/Gemini_Generated_Image_95hqce95hqce95hq.jpg" alt="Ford z USA v přístavu" className="absolute inset-0 h-full w-full object-cover object-[72%_center] opacity-75 sm:object-[62%_center]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
           <div className="relative mx-auto flex min-h-[560px] max-w-[1280px] items-center px-5 py-16 lg:px-8">
             <div>
