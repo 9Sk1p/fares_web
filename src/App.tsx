@@ -55,6 +55,7 @@ const avatars = [
 
 const img = {
   hero: 'https://images.pexels.com/photos/15489246/pexels-photo-15489246.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920',
+  usa: 'https://images.unsplash.com/photo-1711512302274-8aafe96481bb?w=1600&auto=format&fit=crop&q=85&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGZvcmR8ZW58MHx8MHx8fDA%3D',
   why: 'https://images.pexels.com/photos/4489776/pexels-photo-4489776.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   team: 'https://images.pexels.com/photos/7018506/pexels-photo-7018506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   contact: 'https://images.pexels.com/photos/9572045/pexels-photo-9572045.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -397,7 +398,7 @@ export default function App() {
 
         {/* ——— BLOCK 3: USA CARS (Dark) ——— */}
         <section id="usa" className="relative min-h-[560px] overflow-hidden border-y border-white/10">
-          <img src="/images/Gemini_Generated_Image_95hqce95hqce95hq.jpg" alt="Ford z USA v přístavu" className="absolute inset-0 h-full w-full object-cover object-[62%_center] opacity-75" />
+          <img src={img.usa} alt="Ford z USA" className="absolute inset-0 h-full w-full object-cover object-[68%_center] opacity-75 sm:object-[62%_center]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
           <div className="relative mx-auto flex min-h-[560px] max-w-[1280px] items-center px-5 py-16 lg:px-8">
             <div>
