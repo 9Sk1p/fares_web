@@ -637,9 +637,9 @@ export default function App() {
               </div>
               <button type="button" onClick={() => setServicesOpen(false)} aria-label={tr.servicesClose} className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-zinc-300 transition hover:border-red-600 hover:bg-red-600 hover:text-white"><X size={19} /></button>
             </div>
-            <div className="grid gap-4 p-6 sm:grid-cols-2 sm:items-start sm:p-10">
+            <div className="gap-4 p-6 sm:columns-2 sm:gap-4 sm:p-10">
               {priceGroups.map((group) => (
-                <section key={group.title} className="min-w-0 border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
+                <section key={group.title} className="mb-4 block min-w-0 break-inside-avoid border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
                   <div className="mb-5 flex items-start gap-3">
                     <span className="font-display text-3xl font-bold leading-none text-red-600">0{priceGroups.indexOf(group) + 1}</span>
                     <h3 className="pt-1 font-display text-lg font-bold uppercase leading-[1.25] text-white">{group.title}</h3>
