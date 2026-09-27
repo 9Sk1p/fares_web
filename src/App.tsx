@@ -296,23 +296,23 @@ export default function App() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0a0c0e]/90 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 lg:px-8">
           <Logo />
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-4 whitespace-nowrap lg:flex xl:gap-7">
             {tr.nav.map(([label, href]) => (
-              <a key={href} href={href} className="group relative text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400 transition hover:text-white">
+              <a key={href} href={href} className="group relative text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400 transition hover:text-white xl:tracking-[0.16em]">
                 {label}
                 <span className="absolute -bottom-1.5 left-0 h-[2px] w-0 bg-red-600 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 xl:gap-4">
             <div className="hidden items-center gap-2 text-[10px] font-bold sm:flex">
               <button type="button" onClick={() => setLang('cz')} className={lang === 'cz' ? 'text-white' : 'text-zinc-500 hover:text-white'}>CZ</button>
               <span className="text-zinc-700">|</span>
               <button type="button" onClick={() => setLang('ru')} className={lang === 'ru' ? 'text-white' : 'text-zinc-500 hover:text-white'}>RU</button>
             </div>
             <div className="hidden items-center gap-2 sm:flex">
-              <a href="tel:+420777905432" className="inline-flex items-center gap-2 border border-white/20 px-3 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:border-red-600 hover:text-red-500"><Phone size={13} /> {tr.phoneCta}</a>
-              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="bg-red-600 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500 sm:block">{tr.cta}</a>
+              <a href="tel:+420777905432" className="hidden items-center gap-2 whitespace-nowrap border border-white/20 px-3 py-3 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:border-red-600 hover:text-red-500 xl:inline-flex"><Phone size={13} /> {tr.phoneCta}</a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="whitespace-nowrap bg-red-600 px-4 py-3 text-center text-[10px] font-bold uppercase leading-4 tracking-[0.1em] transition hover:bg-red-500">{tr.cta}</a>
             </div>
             <button type="button" onClick={() => setMobileOpen(!mobileOpen)} className="flex h-11 w-11 items-center justify-center border border-white/15 lg:hidden" aria-label={tr.menuAria}>{mobileOpen ? <X size={19} /> : <Menu size={19} />}</button>
           </div>
@@ -637,7 +637,7 @@ export default function App() {
               </div>
               <button type="button" onClick={() => setServicesOpen(false)} aria-label={tr.servicesClose} className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-zinc-300 transition hover:border-red-600 hover:bg-red-600 hover:text-white"><X size={19} /></button>
             </div>
-            <div className="grid gap-4 p-6 sm:grid-cols-2 sm:p-10">
+            <div className="grid gap-4 p-6 sm:grid-cols-2 sm:items-start sm:p-10">
               {priceGroups.map((group) => (
                 <section key={group.title} className="min-w-0 border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
                   <div className="mb-5 flex items-start gap-3">
