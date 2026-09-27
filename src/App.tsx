@@ -31,16 +31,16 @@ const usaWhatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%
 
 const servicePriceGroups = {
   cz: [
-    { title: 'MOTOROVÉ OPRAVY', items: [['Výměna rozvodů', 'OD 4 500 Kč'], ['Čištění DPF', 'OD 3 500 Kč'], ['Výměna turba', 'OD 3 500 Kč'], ['Další opravy', 'CENA DOHODOU']] },
-    { title: 'POHON KOL A NÁPRAVY', items: [['Výměna spojky', 'OD 4 000 Kč'], ['Oprava tlumičů a stabilizátorů', 'OD 1 000 Kč'], ['Údržba a výměna zapalovacích svíček', 'OD 400 Kč']] },
-    { title: 'DALŠÍ SLUŽBY', items: [['Leštění a čištění interiéru', 'OD 2 000 Kč'], ['Silniční asistence a odvoz vozidla', 'OD 1 500 Kč'], ['Montáž doplňkového příslušenství', 'CENA DOHODOU']] },
-    { title: 'SERVIS A DIAGNOSTIKA', items: [['Diagnostika vozidla', 'DLE ROZSAHU'], ['Brzdy a podvozek', 'DLE ROZSAHU'], ['Karosářské opravy', 'DLE ROZSAHU'], ['Dovoz a úprava vozů z USA', 'CENA DOHODOU']] },
+    { title: 'OPRAVY A ÚDRŽBA', items: [['Práce mechanika', '970 Kč / HOD'], ['Diagnostika vozidla', '600 Kč'], ['Při následné opravě u nás', 'ZDARMA'], ['Výměna oleje', 'OD 800 Kč'], ['Výměna brzdových kotoučů', 'OD 1 200 Kč'], ['Výměna tlumiče', 'OD 1 200 Kč'], ['Výměna spojky', 'OD 5 000 Kč'], ['Výměna oleje v automatické převodovce', 'OD 1 500 Kč'], ['Výměna rozvodové sady', 'OD 4 500 Kč'], ['Oprava podvozku', 'OD 1 500 Kč']] },
+    { title: 'PNEUSERVIS', items: [['Pneuservis', 'OD 800 Kč']] },
+    { title: 'KLIMATIZACE', items: [['Připojení zařízení pro plnění klimatizace', '600 Kč'], ['Náplň klimatizace', 'ÚČTUJE SE ZVLÁŠŤ']] },
+    { title: 'KAROSÁŘSKÉ PRÁCE', items: [['Karosářské práce', '970 Kč / HOD'], ['Úprava zadních světel', 'OD 16 000 Kč']] },
   ],
   ru: [
-    { title: 'РЕМОНТ ДВИГАТЕЛЯ', items: [['Замена ГРМ', 'ОТ 4 500 Kč'], ['Чистка DPF', 'ОТ 3 500 Kč'], ['Замена турбины', 'ОТ 3 500 Kč'], ['Другие работы', 'ПО ДОГОВОРЁННОСТИ']] },
-    { title: 'ПРИВОД И ХОДОВАЯ', items: [['Замена сцепления', 'ОТ 4 000 Kč'], ['Ремонт амортизаторов и стабилизаторов', 'ОТ 1 000 Kč'], ['Обслуживание и замена свечей зажигания', 'ОТ 400 Kč']] },
-    { title: 'ДРУГИЕ УСЛУГИ', items: [['Полировка и чистка салона', 'ОТ 2 000 Kč'], ['Дорожная помощь и эвакуация автомобиля', 'ОТ 1 500 Kč'], ['Установка дополнительного оборудования', 'ПО ДОГОВОРЁННОСТИ']] },
-    { title: 'СЕРВИС И ДИАГНОСТИКА', items: [['Диагностика автомобиля', 'ПО ОБЪЁМУ'], ['Тормоза и ходовая часть', 'ПО ОБЪЁМУ'], ['Кузовной ремонт', 'ПО ОБЪЁМУ'], ['Доставка и доработка авто из США', 'ПО ДОГОВОРЁННОСТИ']] },
+    { title: 'РЕМОНТ И ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ', items: [['Работа механика', '970 Kč / ЧАС'], ['Диагностика автомобиля', '600 Kč'], ['При последующем ремонте у нас', 'БЕСПЛАТНО'], ['Замена масла', 'ОТ 800 Kč'], ['Замена тормозных дисков', 'ОТ 1 200 Kč'], ['Замена амортизатора', 'ОТ 1 200 Kč'], ['Замена сцепления', 'ОТ 5 000 Kč'], ['Замена масла в АКПП', 'ОТ 1 500 Kč'], ['Замена комплекта ГРМ', 'ОТ 4 500 Kč'], ['Ремонт ходовой части', 'ОТ 1 500 Kč']] },
+    { title: 'ШИНОМОНТАЖ', items: [['Шиномонтаж', 'ОТ 800 Kč']] },
+    { title: 'КОНДИЦИОНЕР', items: [['Подключение оборудования для заправки кондиционера', '600 Kč'], ['Заправочная жидкость', 'ОПЛАЧИВАЕТСЯ ОТДЕЛЬНО']] },
+    { title: 'КУЗОВНЫЕ РАБОТЫ', items: [['Кузовные работы', '970 Kč / ЧАС'], ['Переделка задних фонарей', 'ОТ 16 000 Kč']] },
   ],
 } as const;
 
