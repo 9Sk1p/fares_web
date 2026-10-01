@@ -15,7 +15,6 @@ import {
   Menu,
   MessageCircle,
   Phone,
-  Clock,
   Settings,
   ShieldCheck,
   Star,
@@ -28,6 +27,7 @@ type IconType = typeof Wrench;
 
 const whatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20servis.';
 const usaWhatsappUrl = 'https://wa.me/420777905432?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20dotaz%20ohledn%C4%9B%20auta%20z%20USA.';
+const googleReviewUrl = 'https://www.google.com/maps?q=Autoservis+Fares,+Palack%C3%A9ho+3%2F4,+277+11+Neratovice&review=write';
 
 const servicePriceGroups = {
   cz: [
@@ -39,7 +39,7 @@ const servicePriceGroups = {
   ru: [
     { title: 'РЕМОНТ И ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ', items: [['Работа механика', '970 Kč / ЧАС'], ['Диагностика автомобиля', '600 Kč'], ['При последующем ремонте у нас', 'БЕСПЛАТНО'], ['Замена масла', 'ОТ 800 Kč'], ['Замена тормозных дисков', 'ОТ 1 200 Kč'], ['Замена амортизатора', 'ОТ 1 200 Kč'], ['Замена сцепления', 'ОТ 5 000 Kč'], ['Замена масла в АКПП', 'ОТ 1 500 Kč'], ['Замена комплекта ГРМ', 'ОТ 4 500 Kč'], ['Ремонт ходовой части', 'ОТ 1 500 Kč']] },
     { title: 'ШИНОМОНТАЖ', items: [['Шиномонтаж', 'ОТ 800 Kč']] },
-    { title: 'КОНДИЦИОНЕР', items: [['Подключение оборудования для заправки кондиционера', '600 Kč'], ['Заправочная жидкость', 'ОПЛАЧИВАЕТСЯ ОТДЕЛЬНО']] },
+    { title: 'КОНДИЦИОНЕР', items: [['Подключение оборудования для заправки кондиционера', '600 Kč'], ['Заправка кондиционера', 'ОПЛАЧИВАЕТСЯ ОТДЕЛЬНО']] },
     { title: 'КУЗОВНЫЕ РАБОТЫ', items: [['Кузовные работы', '970 Kč / ЧАС'], ['Переделка задних фонарей', 'ОТ 16 000 Kč']] },
   ],
 } as const;
@@ -65,9 +65,9 @@ const img = {
     'https://images.pexels.com/photos/34277923/pexels-photo-34277923.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   ],
   reviews: [
-    'https://images.pexels.com/photos/13058788/pexels-photo-13058788.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    'https://images.pexels.com/photos/11189627/pexels-photo-11189627.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    'https://images.pexels.com/photos/12658202/pexels-photo-12658202.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    'https://images.unsplash.com/photo-1731673289078-5a4b9295356e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29sa3N3YWdlbiUyMGdvbGZ8ZW58MHx8MHx8fDA%3D',
+    'https://images.unsplash.com/photo-1663433340126-1868f62ca7a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Ym13JTIwNXxlbnwwfHwwfHx8MA%3D%3D',
+    'https://images.unsplash.com/photo-1591293836027-e05b48473b67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZCUyMG11c3Rhbmd8ZW58MHx8MHx8fDA%3D',
   ],
 };
 
@@ -82,6 +82,9 @@ const translations = {
     heroBtn: 'OBJEDNAT SERVIS',
     heroBtn2: 'NAŠE SLUŽBY',
     heroNote: 'SERVIS • OPRAVY • VOZY Z USA',
+    usaRoads: 'AMERICKÉ VOZY • EVROPSKÉ SILNICE',
+    trustLine: 'VÍCE NEŽ SERVIS. DLOUHODOBÁ DŮVĚRA.',
+    brandLine: 'SERVIS • OPRAVY • VOZY Z USA',
     benefits: ['Profesionální přístup', 'Kvalita a zkušenosti', 'Spokojení klienti'],
     svcLabel: 'SLUŽBY',
     svcTitle: 'VŠE PRO VAŠE AUTO',
@@ -102,22 +105,36 @@ const translations = {
     usaTitle2: 'EVROPSKÉ SILNICE',
     usaText: 'Pomáháme s výběrem, dovozem, opravami a úpravami vozů z USA. Zajistíme kompletní proces — od nákupu přes dopravu, přestavbu na evropské standardy až po registraci v ČR.',
     usaBtn: 'VÍCE O AUTECH Z USA',
+    usaModalTitle: 'PŘESTAVBA A ÚPRAVA VOZŮ Z USA',
+    usaModalIntro: 'Specializujeme se na vozy dovezené z USA a kompletně je přizpůsobujeme požadavkům evropských norem.',
+    usaModalItems: [
+      'Kompletní adaptace vozu pro EU — výměna a nastavení světlometů, zadních světel, směrovek a dalších prvků osvětlení podle evropských požadavků.',
+      'Technická příprava a dovybavení vozu pro absolvování potřebných kontrol a registraci v České republice.',
+      'Registrace vozu a vyřízení českých registračních značek — pomůžeme projít všemi potřebnými kroky.',
+      'Pomoc s nákupem vozu na aukci v USA — prostřednictvím ověřených partnerů pomůžeme s výběrem, účastí na aukci a dopravou do ČR.',
+      'Opravy vozů po nehodě — karosářské práce, výměna poškozených dílů, opravy a diagnostika.',
+      'Příprava vozu na klíč — od poškozeného nebo právě dovezeného vozu až po automobil připravený k provozu podle požadavků EU.',
+    ],
+    usaModalResult: 'Výsledkem je vůz kompletně připravený k provozu a registraci v České republice.',
+    usaModalCta: 'ZÍSKAT KONZULTACI',
+    usaModalClose: 'Zavřít detail vozů z USA',
     whyLabel: 'PROČ FARES',
     whyH1: 'VÍME, CO DĚLÁME.',
     whyH2: 'A DĚLÁME TO POŘÁDNĚ',
+    whySub: 'Férový přístup, moderní technologie a řešení, na která se můžete spolehnout.',
     whyFeats: [
-      ['ZKUŠENOSTI', 'Zkušený tým a individuální přístup ke každému vozu.', Award],
-      ['MODERNÍ VYBAVENÍ', 'Diagnostika a technologie pro moderní automobily.', Cog],
-      ['VŠE NA JEDNOM MÍSTĚ', 'Od diagnostiky přes servis až po komplexní opravy.', Car],
-      ['FÉROVÉ JEDNÁNÍ', 'Vždy vám řekneme, co je potřeba opravit a proč.', Handshake],
+      ['KOMPLEXNÍ SERVIS', 'Od diagnostiky a běžného servisu až po náročné opravy a kompletní renovace vozu.', Award],
+      ['MODERNÍ DIAGNOSTIKA', 'Používáme moderní technologie a vybavení pro přesnou diagnostiku a opravy současných automobilů.', Cog],
+      ['AMERICKÉ VOZY', 'Specializujeme se na vozy dovezené z USA — jejich úpravu podle evropských standardů, opravy, registraci i přípravu na provoz v ČR.', Car],
+      ['ŘEŠENÍ NA MÍRU', 'Neřešíme jen samotný problém. Hledáme jeho příčinu a doporučíme řešení, které dává smysl z hlediska kvality, spolehlivosti i ceny.', Handshake],
     ] as [string, string, IconType][],
     teamLabel: 'O NÁS',
-    teamH1: 'ZA FARES',
-    teamH2: 'STOJÍ LIDÉ',
-    teamSub: 'Zkušenosti, poctivá práce a vztah k tomu, co děláme.',
-    teamText: 'Autoservis FARES vznikl z vášně pro auta a touhy dělat věci poctivě. Každému vozu věnujeme pozornost a každému zákazníkovi chceme nabídnout férový přístup a řešení, na které se může spolehnout.',
+    teamH1: 'NAŠE',
+    teamH2: 'CESTA',
+    teamSub: 'Začalo to zájmem o auta a chutí dělat věci pořádně. Postupně jsme rostli, získávali zkušenosti a vybudovali servis, který dnes stojí na kvalitě, pečlivosti a individuálním přístupu.',
+    teamText: 'Stejnou pozornost věnujeme každému zákazníkovi. Vždy hledáme řešení, které dává smysl — spolehlivé, efektivní a odpovídající jeho potřebám i rozpočtu.',
     teamBtn: 'POZNAT NÁŠ TÝM',
-    stats: [['5+', 'ČLENŮ TÝMU', CircleUserRound], ['100+', 'SPOKOJENÝCH ZÁKAZNÍKŮ', Star], ['10 LET', 'ZKUŠENOSTÍ', Settings], ['PRAHA', 'A OKOLÍ', MapPin]] as [string, string, IconType][],
+    stats: [['5+', 'ČLENŮ TÝMU', CircleUserRound], ['10000+', 'ZÁKAZNÍKŮ', Star], ['5+ let', 'ZKUŠENOSTÍ', Settings], ['PRAHA | NERATOVICE', 'A OKOLÍ', MapPin]] as [string, string, IconType][],
     workLabel: 'NAŠE PRÁCE',
     workH1: 'PRÁCE, KTERÁ',
     workH2: 'MLUVÍ SAMA ZA SEBE',
@@ -128,12 +145,12 @@ const translations = {
     refLabel: 'REFERENCE',
     refH1: 'CO ŘÍKAJÍ',
     refH2: 'NAŠI ZÁKAZNÍCI',
-    refBottom: 'PŘES 100+ SPOKOJENÝCH ZÁKAZNÍKŮ',
-    refAllBtn: 'VŠECHNY RECENZE',
+    refBottom: 'PŘES 10 000 SPOKOJENÝCH ZÁKAZNÍKŮ',
+    refAllBtn: 'ZANECHAT RECENZI',
     reviews: [
-      ['Tomáš R.', 'VW Golf', 'Dovolen servisem, obsluha na výši, skvělý přístup k zákazníkům. Servisuji auto u nich už po několikáté! Doporučuji.'],
+      ['Tomáš R.', 'VW Golf', 'Jsem spokojený se servisem, obsluha je na vysoké úrovni a přístup k zákazníkům je skvělý. Auto u nich servisuji už poněkolikáté! Doporučuji.'],
       ['Martin K.', 'BMW 5', 'Neustále servisuji v tomto autoservisu — vždy vše na úrovni. Pracují rychle, pečlivě a bez zbytečného nabízení. Ceny jsou adekvátní, přístup k zákazníkovi je skvělý. Klidně můžete svěřit své auto. Doporučuji!'],
-      ['Jan P.', 'Ford Mustang', 'Skvělý autoservis! Vše udělali rychle a kvalitně, bez nabízení zbytečných služeb. Kluci ví, co dělají, vše vysvětlí srozumitelně. Zůstal jsem velmi spokojen, budu se vracet. Doporučuji.'],
+      ['Jan P.', 'Ford Mustang', 'Skvělý autoservis! Vše udělali rychle a kvalitně, bez vnucování zbytečných služeb. Kluci vědí, co dělají, a vše srozumitelně vysvětlí. Jsem velmi spokojený a budu se vracet. Doporučuji.'],
     ],
     ctaLabel: 'KONTAKT',
     ctaH1: 'POTŘEBUJETE SERVIS?',
@@ -142,11 +159,11 @@ const translations = {
     ctaPhone: 'TELEFON',
     ctaAddr: 'ADRESA',
     ctaHours: 'OTEVÍRACÍ DOBA',
-    ctaAddrVal: 'Praha, Česká republika',
+    ctaAddrVal: 'Palackého 3/4, 277 11 Neratovice',
     ctaHoursVal: 'Po–Pá 9:00–18:00',
     ctaVisit: 'TĚŠÍME SE NA VAŠI NÁVŠTĚVU.',
     footer: '© 2026 FARES s.r.o.',
-    footerAddr: 'Praha, Česká republika',
+    footerAddr: 'Palackého 3/4, 277 11 Neratovice',
     footerPhone: '+420 777 905 432',
     footerEmail: 'info@autoservisfares.cz',
     langAria: 'Přepnout jazyk',
@@ -155,12 +172,16 @@ const translations = {
   ru: {
     nav: [['Главная', '#domu'], ['Услуги', '#sluzby'], ['Авто из США', '#usa'], ['О нас', '#o-nas'], ['Отзывы', '#reference'], ['Контакты', '#kontakt']],
     cta: 'Записаться в сервис',
-    phoneCta: 'Позвонить',    heroLabel: 'Автосервис Fares',
+    phoneCta: 'Позвонить',
+    heroLabel: 'Автосервис Fares',
     heroH1: 'НАДЕЖНЫЙ СЕРВИС ДЛЯ КАЖДОГО АВТО',
     heroSub: 'Качественный сервис. Честный подход. Индивидуальные решения.',
     heroBtn: 'ЗАПИСАТЬСЯ В СЕРВИС',
     heroBtn2: 'НАШИ УСЛУГИ',
     heroNote: 'СЕРВИС • РЕМОНТ • АВТО ИЗ США',
+    usaRoads: 'АМЕРИКАНСКИЕ АВТО • ЕВРОПЕЙСКИЕ ДОРОГИ',
+    trustLine: 'БОЛЬШЕ, ЧЕМ СЕРВИС. ДОЛГОВРЕМЕННОЕ ДОВЕРИЕ.',
+    brandLine: 'СЕРВИС • РЕМОНТ • АВТО ИЗ США',
     benefits: ['Профессиональный подход', 'Качество и опыт', 'Довольные клиенты'],
     svcLabel: 'УСЛУГИ',
     svcTitle: 'ВСЁ ДЛЯ ВАШЕГО АВТО',
@@ -173,7 +194,7 @@ const translations = {
     svcMore: 'ПОДРОБНЕЕ',
     svcAll: 'ВСЕ УСЛУГИ',
     servicesTitle: 'ПРАЙС-ЛИСТ НАШИХ УСЛУГ',
-    servicesSubtitle: 'Цены являются ориентировочными и могут зависеть от модели автомобиля и объёма работ.',
+    servicesSubtitle: 'Цены являются ориентировочными и могут отличаться в зависимости от модели автомобиля и объёма работ.',
     servicesNote: 'Нужен точный расчёт? Напишите нам или позвоните.',
     servicesClose: 'Закрыть',
     usaLabel: 'АВТО ИЗ США',
@@ -181,22 +202,36 @@ const translations = {
     usaTitle2: 'ЕВРОПЕЙСКИХ ДОРОГ',
     usaText: 'Помогаем с подбором, доставкой, ремонтом и доработкой авто из США. Обеспечиваем полный процесс — от покупки через доставку, адаптацию под стандарты ЕС до регистрации в ЧР.',
     usaBtn: 'ПОДРОБНЕЕ ОБ АВТО ИЗ США',
+    usaModalTitle: 'ПЕРЕОБОРУДОВАНИЕ И АДАПТАЦИЯ АВТО ИЗ США',
+    usaModalIntro: 'Мы специализируемся на работе с автомобилями, привезёнными из США, и полностью адаптируем их под требования европейских стандартов.',
+    usaModalItems: [
+      'Полная адаптация автомобиля под ЕС — замена и настройка фар, задних фонарей, поворотников и других элементов освещения в соответствии с европейскими требованиями.',
+      'Техническая подготовка и дооснащение автомобиля для прохождения необходимых проверок и регистрации в Чехии.',
+      'Регистрация автомобиля и оформление чешских номерных знаков — помогаем пройти все необходимые этапы оформления.',
+      'Помощь с покупкой автомобиля на аукционе в США — через наших проверенных партнёров можем помочь подобрать автомобиль, принять участие в аукционе и организовать его доставку в Чехию.',
+      'Восстановление автомобилей после ДТП — выполняем полный комплекс восстановительных работ: кузовной ремонт, замену повреждённых деталей, ремонт и диагностику.',
+      'Подготовка автомобиля «под ключ» — от повреждённого или только что привезённого автомобиля до полностью готовой к эксплуатации машины, соответствующей требованиям ЕС.',
+    ],
+    usaModalResult: 'В результате вы получаете автомобиль, полностью подготовленный для эксплуатации и регистрации в Чехии.',
+    usaModalCta: 'ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ',
+    usaModalClose: 'Закрыть подробности об авто из США',
     whyLabel: 'ПОЧЕМУ FARES',
     whyH1: 'МЫ ЗНАЕМ, ЧТО ДЕЛАЕМ.',
     whyH2: 'И ДЕЛАЕМ ЭТО КАЧЕСТВЕННО',
+    whySub: 'Честный подход, современные технологии и решения, на которые можно положиться.',
     whyFeats: [
-      ['ОПЫТ', 'Опытная команда и индивидуальный подход к каждому авто.', Award],
-      ['СОВРЕМЕННОЕ ОБОРУДОВАНИЕ', 'Диагностика и технологии для современных автомобилей.', Cog],
-      ['ВСЁ В ОДНОМ МЕСТЕ', 'От диагностики и сервиса до комплексного ремонта.', Car],
-      ['ЧЕСТНОЕ ОТНОШЕНИЕ', 'Всегда объясним, что нужно ремонтировать и почему.', Handshake],
+      ['КОМПЛЕКСНЫЙ СЕРВИС', 'От диагностики и регулярного обслуживания до сложного ремонта и полной реставрации автомобиля.', Award],
+      ['СОВРЕМЕННАЯ ДИАГНОСТИКА', 'Используем современные технологии и оборудование для точной диагностики и ремонта автомобилей.', Cog],
+      ['АМЕРИКАНСКИЕ АВТО', 'Специализируемся на автомобилях из США: адаптация под европейские стандарты, ремонт, регистрация и подготовка к эксплуатации в Чехии.', Car],
+      ['ИНДИВИДУАЛЬНЫЕ РЕШЕНИЯ', 'Мы устраняем не только саму проблему, но и её причину, предлагая оптимальное решение по качеству, надёжности и цене.', Handshake],
     ] as [string, string, IconType][],
     teamLabel: 'О НАС',
-    teamH1: 'ЗА FARES',
-    teamH2: 'СТОЯТ ЛЮДИ',
-    teamSub: 'Опыт, честная работа и любовь к своему делу.',
-    teamText: 'Автосервис FARES создан из любви к автомобилям и желания делать всё качественно. Мы уделяем внимание каждому автомобилю и предлагаем каждому клиенту честный подход и решение, на которое можно положиться.',
+    teamH1: 'НАШ',
+    teamH2: 'ПУТЬ',
+    teamSub: 'Всё началось с интереса к автомобилям и желания делать всё качественно. Постепенно мы росли, приобретали опыт и создали сервис, который сегодня строится на качестве, внимательности и индивидуальном подходе.',
+    teamText: 'Мы уделяем одинаковое внимание каждому клиенту. Всегда ищем надёжное и эффективное решение, которое соответствует его потребностям и бюджету.',
     teamBtn: 'ПОЗНАКОМИТЬСЯ С КОМАНДОЙ',
-    stats: [['5+', 'ЧЛЕНОВ КОМАНДЫ', CircleUserRound], ['100+', 'ДОВОЛЬНЫХ КЛИЕНТОВ', Star], ['10 ЛЕТ', 'ОПЫТА', Settings], ['ПРАГА', 'И ОКРЕСТНОСТИ', MapPin]] as [string, string, IconType][],
+    stats: [['5+', 'ЧЛЕНОВ КОМАНДЫ', CircleUserRound], ['10000+', 'КЛИЕНТОВ', Star], ['5+ ЛЕТ', 'ОПЫТА', Settings], ['ПРАГА | НЕРАТОВИЦЕ', 'И ОКРЕСТНОСТИ', MapPin]] as [string, string, IconType][],
     workLabel: 'НАШИ РАБОТЫ',
     workH1: 'РАБОТА, КОТОРАЯ',
     workH2: 'ГОВОРИТ САМА ЗА СЕБЯ',
@@ -207,8 +242,8 @@ const translations = {
     refLabel: 'ОТЗЫВЫ',
     refH1: 'ЧТО ГОВОРЯТ',
     refH2: 'НАШИ КЛИЕНТЫ',
-    refBottom: 'БОЛЕЕ 100+ ДОВОЛЬНЫХ КЛИЕНТОВ',
-    refAllBtn: 'ВСЕ ОТЗЫВЫ',
+    refBottom: 'БОЛЕЕ 10 000 ДОВОЛЬНЫХ КЛИЕНТОВ',
+    refAllBtn: 'ОСТАВИТЬ ОТЗЫВ',
     reviews: [
       ['Томаш Р.', 'VW Golf', 'Доволен сервисом, обслуживание на высоте, отличный подход к клиентам. Далеко не первый раз обслуживаю свою машину у них! Рекомендую.'],
       ['Мартин К.', 'BMW 5', 'Постоянно обслуживаюсь в этом автосервисе — всё всегда на уровне. Работают быстро, аккуратно и без лишних навязываний. Цены адекватные, отношение к клиенту отличное. Можно спокойно доверять свою машину. Рекомендую!'],
@@ -221,11 +256,11 @@ const translations = {
     ctaPhone: 'ТЕЛЕФОН',
     ctaAddr: 'АДРЕС',
     ctaHours: 'ВРЕМЯ РАБОТЫ',
-    ctaAddrVal: 'Прага, Чешская Республика',
+    ctaAddrVal: 'Palackého 3/4, 277 11 Neratovice',
     ctaHoursVal: 'Пн–Пт 9:00–18:00',
     ctaVisit: 'ЖДЁМ ВАШЕГО ВИЗИТА.',
     footer: '© 2026 FARES s.r.o.',
-    footerAddr: 'Прага, Чешская Республика',
+    footerAddr: 'Palackého 3/4, 277 11 Neratovice',
     footerPhone: '+420 777 905 432',
     footerEmail: 'info@autoservisfares.cz',
     langAria: 'Переключить язык',
@@ -244,43 +279,49 @@ function RuleLabel({ children }: { children: string }) {
 
 function Logo() {
   return (
-    <a href="#domu" className="flex items-center gap-3" aria-label="Autoservis Fares">
-      <div className="h-10 w-16">
-        <svg viewBox="0 0 90 48" className="h-full w-full" aria-hidden="true">
-          <path d="M5 34c7-9 17-12 27-12l8-11c6-6 22-7 32-3l12 7h5c2 0 3 2 1 4l-7 4c-3 8-10 12-20 12H15c-5 0-8-1-10-1Z" fill="none" stroke="#dc2626" strokeWidth="2" />
-          <path d="M38 21c7 0 17 0 25 2M48 10l5 10M8 35h74" stroke="#f4f4f5" strokeWidth="1.4" fill="none" />
-          <circle cx="25" cy="35" r="5" fill="#0a0a0a" stroke="#f4f4f5" strokeWidth="1.5" />
-          <circle cx="71" cy="35" r="5" fill="#0a0a0a" stroke="#f4f4f5" strokeWidth="1.5" />
-        </svg>
-      </div>
-      <span className="hidden leading-[1.25] sm:block">
-        <strong className="block font-display text-sm tracking-[0.08em]">
-          AUTOSERVIS <em className="not-italic text-red-600">FARES</em>
-        </strong>
-        <small className="mt-1 block text-[7px] tracking-[0.18em] text-zinc-500">Servis • Opravy • Vozy z USA</small>
-      </span>
+    <a href="#domu" aria-label="Autoservis Fares">
+      <img
+        src="/logo.png"
+        alt="Autoservis Fares"
+        className="h-14 w-auto object-contain"
+      />
     </a>
   );
 }
+
 
 export default function App() {
   const [lang, setLang] = useState<Lang>('cz');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeGallery, setActiveGallery] = useState(0);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [usaOpen, setUsaOpen] = useState(false);
   const tr = translations[lang];
   const priceGroups = servicePriceGroups[lang];
 
   useEffect(() => {
-    if (!servicesOpen) return;
+    if (!servicesOpen && !usaOpen) return;
 
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setServicesOpen(false);
+      if (event.key === 'Escape') {
+        setServicesOpen(false);
+        setUsaOpen(false);
+      }
     };
 
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [servicesOpen]);
+  }, [servicesOpen, usaOpen]);
+
+  useEffect(() => {
+    if (!servicesOpen && !usaOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [servicesOpen, usaOpen]);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -350,7 +391,7 @@ export default function App() {
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
                 <a href="#sluzby" className="inline-flex min-h-12 items-center gap-4 border border-white/30 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:border-white">{tr.heroBtn2} <ArrowRight size={15} /></a>
               </div>
-              <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.32em] text-zinc-500">Servis <span className="text-red-600">&bull;</span> Opravy <span className="text-red-600">&bull;</span> Vozy z USA</p>
+              <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.32em] text-zinc-500">{tr.heroNote}</p>
             </div>
           </div>
           {/* Benefits strip */}
@@ -397,14 +438,14 @@ export default function App() {
           <img src="/images/Gemini_Generated_Image_95hqce95hqce95hq copy.jpg" alt="Ford z USA v přístavu" className="absolute inset-0 h-full w-full object-cover object-[78%_center] opacity-90 sm:object-[68%_center] lg:object-[62%_center]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#080a0c] via-[#080a0c]/80 to-transparent" />
           <div className="relative mx-auto flex min-h-[560px] max-w-[1280px] items-center px-5 py-16 lg:px-8">
-            <div>
+            <div className="min-w-0 max-w-2xl">
               <RuleLabel>{tr.usaLabel}</RuleLabel>
-              <h2 className="mt-8 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
+              <h2 className="mt-8 break-words font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                 {tr.usaTitle} <span className="text-red-600">{tr.usaTitle2}</span><span className="ml-1 text-red-600">.</span>
               </h2>
-              <p className="mt-7 text-lg leading-7 text-zinc-300">{tr.usaText}</p>
-              <a href={usaWhatsappUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.usaBtn} <ArrowRight size={15} /></a>
-              <p className="mt-12 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">AMERICAN CARS<br />EUROPEAN ROADS</p>
+              <p className="mt-7 max-w-xl text-base leading-7 text-zinc-300 sm:text-lg">{tr.usaText}</p>
+              <button type="button" onClick={() => setUsaOpen(true)} className="mt-8 inline-flex min-h-12 max-w-full items-center gap-4 bg-red-600 px-5 text-left text-[10px] font-bold uppercase leading-4 tracking-[0.13em] text-white transition hover:bg-red-500 sm:px-6">{tr.usaBtn} <ArrowRight className="shrink-0" size={15} /></button>
+              <p className="mt-12 text-[10px] font-bold uppercase leading-[2] tracking-[0.35em] text-zinc-600">{tr.usaRoads}</p>
             </div>
           </div>
         </section>
@@ -416,7 +457,7 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             <div className="absolute bottom-8 left-8">
               <span className="font-display text-4xl font-bold text-white/70">FARES</span>
-              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">VÍCE NEŽ SERVIS.<br />DLOUHODOBÁ DŮVĚRA.</p>
+              <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-400">{tr.trustLine}</p>
             </div>
           </div>
           <div className="flex flex-col justify-center bg-zinc-50 px-6 py-16 text-zinc-900 lg:px-16 lg:py-20">
@@ -424,6 +465,7 @@ export default function App() {
             <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
               {tr.whyH1} <span className="text-red-600">{tr.whyH2}</span><span className="ml-1 text-red-600">.</span>
             </h2>
+            <p className="mt-6 text-sm leading-6 text-zinc-600">{tr.whySub}</p>
             <div className="mt-10 grid gap-8 sm:grid-cols-2">
               {tr.whyFeats.map(([title, text, Icon], i) => (
                 <div key={title} className="relative pl-14">
@@ -436,7 +478,7 @@ export default function App() {
               ))}
             </div>
             <div className="mt-10 flex items-center justify-between border-t border-zinc-300 pt-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Servis <i className="mx-2 text-red-600">•</i> Opravy <i className="mx-2 text-red-600">•</i> Vozy z USA</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">{tr.brandLine}</span>
             </div>
           </div>
         </section>
@@ -451,8 +493,8 @@ export default function App() {
               <h2 className="mt-7 font-display text-4xl font-bold uppercase leading-[1.18] tracking-normal sm:text-5xl md:text-6xl lg:text-7xl">
                 {tr.teamH1} <span className="text-red-600">{tr.teamH2}</span><span className="ml-1 text-red-600">.</span>
               </h2>
-              <p className="mt-6 text-lg leading-snug text-zinc-200 sm:text-xl">{tr.teamSub}</p>
-              <p className="mt-5 text-sm leading-6 text-zinc-400">{tr.teamText}</p>
+              <p className="mt-6 max-w-3xl text-sm leading-6 text-zinc-300">{tr.teamSub}</p>
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-zinc-300">{tr.teamText}</p>
             </div>
             <div className="mt-12 grid grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4">
               {tr.stats.map(([value, label, Icon]) => (
@@ -574,7 +616,7 @@ export default function App() {
                 </div>
                 <span className="text-xs font-bold text-zinc-600">{tr.refBottom}</span>
               </div>
-              <a href="https://maps.app.goo.gl/e8FDaSTKWFBbw8m2A?g_st=it" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.refAllBtn} <ArrowRight size={15} /></a>
+              <a href={googleReviewUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] text-white transition hover:bg-red-500">{tr.refAllBtn} <ArrowRight size={15} /></a>
             </div>
           </div>
         </section>
@@ -618,7 +660,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e]/80 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <span className="font-display text-3xl font-bold text-white/70">FARES</span>
-                  <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-zinc-400">Servis • Opravy • Vozy z USA</p>
+                  <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-zinc-400">{tr.brandLine}</p>
                 </div>
               </div>
             </div>
@@ -638,10 +680,10 @@ export default function App() {
               <button type="button" onClick={() => setServicesOpen(false)} aria-label={tr.servicesClose} className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-zinc-300 transition hover:border-red-600 hover:bg-red-600 hover:text-white"><X size={19} /></button>
             </div>
             <div className="gap-4 p-6 sm:columns-2 sm:gap-4 sm:p-10">
-              {priceGroups.map((group) => (
+              {priceGroups.map((group, groupIndex) => (
                 <section key={group.title} className="mb-4 block min-w-0 break-inside-avoid border border-white/10 bg-[#111418] p-5 transition hover:border-red-600/60 sm:p-6">
                   <div className="mb-5 flex items-start gap-3">
-                    <span className="font-display text-3xl font-bold leading-none text-red-600">0{priceGroups.indexOf(group) + 1}</span>
+                    <span className="font-display text-3xl font-bold leading-none text-red-600">0{groupIndex + 1}</span>
                     <h3 className="pt-1 font-display text-lg font-bold uppercase leading-[1.25] text-white">{group.title}</h3>
                   </div>
                   <div className="space-y-0">
@@ -661,6 +703,33 @@ export default function App() {
                 <a href="tel:+420777905432" className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-4 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:border-white"><Phone size={14} /> {tr.phoneCta}</a>
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 bg-red-600 px-4 text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500"><MessageCircle size={14} /> WhatsApp</a>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {usaOpen && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-3 backdrop-blur-sm sm:p-5" role="presentation" onClick={() => setUsaOpen(false)}>
+          <div className="relative max-h-[92vh] w-full max-w-4xl overflow-x-hidden overflow-y-auto border border-white/15 bg-[#0c0e11] shadow-2xl shadow-black/50" role="dialog" aria-modal="true" aria-labelledby="usa-modal-title" onClick={(event) => event.stopPropagation()}>
+            <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/10 bg-[#0c0e11]/95 px-5 py-5 backdrop-blur-md sm:px-8 sm:py-7">
+              <div className="min-w-0 pr-2">
+                <RuleLabel>{tr.usaLabel}</RuleLabel>
+                <h2 id="usa-modal-title" className="mt-3 break-words font-display text-2xl font-bold uppercase leading-[1.15] sm:text-4xl">{tr.usaModalTitle}<span className="ml-1 text-red-600">.</span></h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-400">{tr.usaModalIntro}</p>
+              </div>
+              <button type="button" onClick={() => setUsaOpen(false)} aria-label={tr.usaModalClose} className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-zinc-300 transition hover:border-red-600 hover:bg-red-600 hover:text-white sm:h-11 sm:w-11"><X size={18} /></button>
+            </div>
+            <div className="grid gap-3 p-5 sm:grid-cols-2 sm:gap-4 sm:p-8">
+              {tr.usaModalItems.map((item, index) => (
+                <div key={item} className="flex min-w-0 gap-3 border border-white/10 bg-[#111418] p-4 sm:p-5">
+                  <span className="shrink-0 font-display text-2xl font-bold leading-none text-red-600">0{index + 1}</span>
+                  <p className="min-w-0 text-sm leading-6 text-zinc-300">{item}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-5 border-t border-white/10 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-7">
+              <p className="max-w-2xl text-sm font-medium leading-6 text-white">{tr.usaModalResult}</p>
+              <a href={usaWhatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-red-600 px-5 text-center text-[10px] font-bold uppercase tracking-[0.1em] transition hover:bg-red-500"><MessageCircle size={15} /> {tr.usaModalCta}</a>
             </div>
           </div>
         </div>
@@ -692,7 +761,7 @@ export default function App() {
         <div className="border-t border-white/10">
           <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-3 px-5 py-6 text-[9px] font-bold uppercase tracking-[0.16em] text-zinc-600 sm:flex-row sm:items-center sm:justify-between lg:px-8">
             <span>{tr.footer}</span>
-            <span className="text-zinc-500">Servis <i className="mx-1 text-red-600">•</i> Opravy <i className="mx-1 text-red-600">•</i> Vozy z USA</span>
+            <span className="text-zinc-500">{tr.brandLine}</span>
           </div>
         </div>
       </footer>
