@@ -387,7 +387,7 @@ export default function App() {
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
               <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">
-                {tr.heroH1} <span className="block sm:inline">{tr.heroH1Bottom}</span><span className="ml-1 text-red-600">.</span>
+                {tr.heroH1} <span className="block sm:inline">{tr.heroH1Bottom}<span className="ml-1 text-red-600">.</span></span>
               </h1>
               <p className="mt-7 text-base text-zinc-300">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
