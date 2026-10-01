@@ -78,7 +78,8 @@ const translations = {
     cta: 'Objednat servis',
     phoneCta: 'Zavolat',
     heroLabel: 'Autoservis Fares',
-    heroH1: 'SPOLEHLIVÝ SERVIS PRO KAŽDÉ AUTO',
+    heroH1: 'SPOLEHLIVÝ SERVIS',
+    heroH1Bottom: 'PRO KAŽDÉ AUTO',
     heroSub: 'Kvalitní servis. Férový přístup. Řešení na míru.',
     heroBtn: 'OBJEDNAT SERVIS',
     heroBtn2: 'NAŠE SLUŽBY',
@@ -174,7 +175,8 @@ const translations = {
     cta: 'Записаться в сервис',
     phoneCta: 'Позвонить',
     heroLabel: 'Автосервис Fares',
-    heroH1: 'НАДЕЖНЫЙ СЕРВИС ДЛЯ КАЖДОГО АВТО',
+    heroH1: 'НАДЕЖНЫЙ СЕРВИС',
+    heroH1Bottom: 'ДЛЯ КАЖДОГО АВТО',
     heroSub: 'Качественный сервис. Честный подход. Индивидуальные решения.',
     heroBtn: 'ЗАПИСАТЬСЯ В СЕРВИС',
     heroBtn2: 'НАШИ УСЛУГИ',
@@ -384,7 +386,9 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[500px] max-w-[1280px] items-center px-5 py-12 lg:min-h-[560px] lg:px-8">
             <div className="max-w-2xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-red-600">{tr.heroLabel}</p>
-              <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">{tr.heroH1}<span className="ml-1 text-red-600">.</span></h1>
+              <h1 className="mt-5 font-display text-3xl font-bold uppercase leading-[1.2] tracking-normal sm:text-4xl md:text-5xl lg:text-6xl">
+                {tr.heroH1} <span className="block sm:inline">{tr.heroH1Bottom}</span><span className="ml-1 text-red-600">.</span>
+              </h1>
               <p className="mt-7 text-base text-zinc-300">{tr.heroSub}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-4 bg-red-600 px-6 text-[10px] font-bold uppercase tracking-[0.13em] transition hover:bg-red-500">{tr.heroBtn} <ArrowRight size={15} /></a>
