@@ -12,7 +12,6 @@ import {
   Gauge,
   Handshake,
   Instagram,
-  Mail,
   MapPin,
   Menu,
   MessageCircle,
@@ -167,7 +166,6 @@ const translations = {
     footer: '© 2026 FARES s.r.o.',
     footerAddr: 'Palackého 3/4, 277 11 Neratovice',
     footerPhone: '+420 777 905 432',
-    footerEmail: 'info@autoservisfares.cz',
     langAria: 'Přepnout jazyk',
     menuAria: 'Otevřít menu',
   },
@@ -264,7 +262,6 @@ const translations = {
     footer: '© 2026 FARES s.r.o.',
     footerAddr: 'Palackého 3/4, 277 11 Neratovice',
     footerPhone: '+420 777 905 432',
-    footerEmail: 'info@autoservisfares.cz',
     langAria: 'Переключить язык',
     menuAria: 'Открыть меню',
   },
@@ -749,10 +746,6 @@ export default function App() {
             <div className="flex items-center gap-3">
               <Phone size={16} className="text-red-600" />
               <a href="tel:+420777905432" className="text-[10px] font-bold uppercase tracking-[0.12em] transition hover:text-white">{tr.footerPhone}</a>
-            </div>
-            <div className="flex items-center gap-3">
-              <Mail size={16} className="text-red-600" />
-              <a href="mailto:info@autoservisfares.cz" className="text-[10px] font-bold uppercase tracking-[0.12em] transition hover:text-white">{tr.footerEmail}</a>
             </div>
           </div>
           <div className="flex items-center gap-4 lg:justify-self-end">
